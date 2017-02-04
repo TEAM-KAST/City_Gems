@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<!-- user login partial will go here with conditional logic -->
+
+<p>hi</p>
+<ul>
+<% @pins.each do |pin| %>
+  <li><a href="/pins/<%= pin.id %>">
+    <%= pin.appeal %>
+  </a></li>
+<% end %>
+</ul>
+
+<%= render partial: "pins/map" %>
+
+
+
+
+<%= link_to 'Add a Gem!', new_pin_path, id: 'new-gem-link' %>

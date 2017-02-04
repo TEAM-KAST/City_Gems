@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @pin.creator_id %>
+</p>
+
+<p>
+  <strong>Appeal:</strong>
+  <%= @pin.appeal %>
+</p>
+
+<p>
+  <strong>Photo url:</strong>
+  <%= @pin.photo_url %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @pin.website %>
+</p>
+
+<%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
+<%= link_to 'Back', pins_path %>
