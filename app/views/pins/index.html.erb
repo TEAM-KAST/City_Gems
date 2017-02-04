@@ -2,7 +2,17 @@
 
 <!-- user login partial will go here with conditional logic -->
 
+<p>hi</p>
+<ul>
+<% @pins.each do |pin| %>
+  <li><a href="<%= pin.id %>">
+    <%= pin.appeal %>
+  </a></li>
+<% end %>
+</ul>
+
 <%= render partial: "pins/map" %>
+
 
 
 
