@@ -17,14 +17,13 @@
 
 // this color is arbitrary and can change. I just needed a color to see the container effects
 body {
-  background-color: orange;
+  background: rgb(255, 165, 0);
 }
 
 h1 {
-  border: 2px solid grey;
-  border-radius: 10px;
-  background-color: rgba(159,159,159,.7);
-  padding: .5em;
+  text-align: center;
+  padding: .1em;
+  font-size: 2.5vh;
 }
 
 input.photo-submit {
@@ -115,8 +114,20 @@ a.navbar-brand {
   margin-right: .5em;
 }
 
+#pin_form {
+  max-width: 90%;
+  // max-height: 90%;
+  vertical-align: center;
+  margin: auto;
+}
+
+
 .field label {
   display: block;
+}
+
+.field input, textarea {
+  background-color: rgba(159,159,159,.7)
 }
 
 #navbar-logo {
@@ -132,5 +143,24 @@ a.navbar-brand {
 
 navbar-default {
   background-color: rgba(159,159,159,.7);
+}
 
+.model-link-container {
+  margin: none;
+  font-size: 2.5vh;
+  text-align: center;
+}
+
+.model-link {
+  margin: auto;
+}
+
+#gem-show-link {
+  float: left;
+  padding-left: 1em;
+}
+
+#back-link {
+  float: right;
+  padding-right: 1em;
 }

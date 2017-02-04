@@ -10,10 +10,9 @@
   <%= @pin.appeal %>
 </p>
 
-<p>
-  <strong>Photo url:</strong>
-  <%= @pin.photo_url %>
-</p>
+<div class="gem-show-img">
+  <img class="gem-img" src="<%= @pin.photo_url %>">
+<div>
 
 <p>
   <strong>Website:</strong>
