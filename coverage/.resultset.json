@@ -30,10 +30,12 @@
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin.rb": [
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag.rb": [
         1,
         1,
         1,
+        1,
+        null,
         1,
         null
       ],
@@ -42,55 +44,25 @@
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/user.rb": [
-        null,
-        null,
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin.rb": [
         1,
         1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/comment.rb": [
-        1,
-        1,
-        1,
-        null,
         1,
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag.rb": [
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/tag.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag_vote.rb": [
         1,
         1,
         1,
         null,
+        1,
         1,
         null
       ],
@@ -294,7 +266,7 @@
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag_vote.rb": [
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/comment.rb": [
         0,
         0,
         0,
@@ -303,13 +275,42 @@
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/tag.rb": [
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/user.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1486249879
+    "timestamp": 1486251123
   }
 }
