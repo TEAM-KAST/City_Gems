@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <%= render partial: "layouts/navbar" %>
     <div>
 
       <% if current_user %>
@@ -24,6 +25,7 @@
     </div>
 
     <div>
+
     <%= yield %>
     </div>
   </body>
