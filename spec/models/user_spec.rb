@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
 
       expect(new_user.uid).to eq("12345678910")
       expect(new_user.first_name).to eq("Jesse")
-      expect(new_user.oauth_expires_at).to eq(auth[:credentials][:expires_at])
+      expect(new_user.token).to eq("abcdefg12345")
     end
 
     describe 'associations' do
