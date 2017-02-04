@@ -22,13 +22,12 @@ class User < ApplicationRecord
     end
 
   # I would like to give the user a username since we cannot get that from Google
-  def username
-
-  end
+  # def username
+  # end
 
   # I would also like to give them the option to change it
-  def username=(new_username)
-    username = new_username
-  end
+  # def username=(new_username)
+  #   username = new_username
+  # end
 
 end
