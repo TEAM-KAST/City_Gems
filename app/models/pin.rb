@@ -1,5 +1,5 @@
 class Pin < ApplicationRecord
-  belongs_to :creator, class_name: 'User'
+  belongs_to :user
   has_many :comments
-  has_many :pintags
+  has_many :pin_tags
 end
