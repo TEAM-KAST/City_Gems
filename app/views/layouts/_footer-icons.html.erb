@@ -1,8 +1,14 @@
 
 <div id="footer-icons">
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
+<ul id="footer-icon-list">
+  <li id="login-icon"><a href="/">
+    <% if current_user %>
+      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+    <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign-icon" %>
+  <% end %>
+    </a></li>
+  <li id="filter-icon"><a href="/">Filter</a></li>
+  <li id="menu-icon"><a href="/">Menu</a></li>
 </ul>
 </div>
