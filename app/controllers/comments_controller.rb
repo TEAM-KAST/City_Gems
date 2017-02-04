@@ -19,7 +19,6 @@ class CommentsController < ApplicationController
 
   def edit
     if current_user
-      @comment = Comment.new
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
