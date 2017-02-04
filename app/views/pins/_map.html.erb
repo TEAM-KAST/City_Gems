@@ -2,10 +2,3 @@
   <h1>A map will go here!</h1>
 </div>
 
-<ul>
-<% @pins.each do |pin|%>
-  <li><a href="<%= pin.id %>">
-    <%= pin.lat %> <%= pin.lng %>
-  </a></li>
-<% end %>
-</ul>
