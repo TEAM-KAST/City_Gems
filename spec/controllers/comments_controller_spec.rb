@@ -8,28 +8,28 @@ RSpec.describe CommentsController, type: :controller do
     request.session[:user_id] = user.id
   end
 
-  describe "GET #show" do
+  xdescribe "GET #show" do
     it "assigns the requested comment as @comment" do
       get :show, params: {id: comment.to_param}
       expect(assigns(:comment)).to eq(comment)
     end
   end
 
-  describe "GET #new" do
+  xdescribe "GET #new" do
     it "assigns a new comment as @comment" do
       get :new, params: {}, session: valid_session
       expect(assigns(:comment)).to be_a_new(Comment)
     end
   end
 
-  describe "GET #edit" do
+  xdescribe "GET #edit" do
     it "assigns the requested comment as @comment" do
       get :edit, params: {id: comment.to_param}
       expect(assigns(:comment)).to eq(comment)
     end
   end
 
-  describe "POST #create" do
+  xdescribe "POST #create" do
     context "with valid params" do
       it "creates a new Comment" do
         expect {
@@ -62,7 +62,7 @@ RSpec.describe CommentsController, type: :controller do
     end
   end
 
-  describe "PUT #update" do
+  xdescribe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
         skip("Add a hash of attributes valid for your model")
@@ -100,7 +100,7 @@ RSpec.describe CommentsController, type: :controller do
     end
   end
 
-  describe "DELETE #destroy" do
+  xdescribe "DELETE #destroy" do
     it "destroys the requested comment" do
       expect {
         delete :destroy, params: {id: comment.to_param}

@@ -9,20 +9,20 @@
       "/Users/apprentice/groovin-solo/City_Gems/app/helpers/sessions_helper.rb": [
         1,
         1,
-        0,
+        7,
         null,
         null,
         1,
-        0,
+        2,
         null,
         null,
         1,
-        0,
+        4,
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null
       ],
@@ -92,6 +92,20 @@
         1,
         null
       ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
       "/Users/apprentice/groovin-solo/City_Gems/app/models/comment.rb": [
         1,
         null,
@@ -115,8 +129,8 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
@@ -126,8 +140,8 @@
         null,
         null,
         null,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
@@ -159,20 +173,6 @@
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/sessions_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/apprentice/groovin-solo/City_Gems/app/jobs/application_job.rb": [
         0,
         0
@@ -184,6 +184,6 @@
         0
       ]
     },
-    "timestamp": 1486235573
+    "timestamp": 1486235860
   }
 }
