@@ -26,6 +26,72 @@
         null,
         null
       ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/comments_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/apprentice/groovin-solo/City_Gems/app/controllers/sessions_controller.rb": [
         1,
         1,
@@ -40,8 +106,16 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/application_controller.rb": [
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/comment.rb": [
         1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/application_record.rb": [
         1,
         1,
         null
@@ -81,11 +155,6 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
       "/Users/apprentice/groovin-solo/City_Gems/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -115,6 +184,6 @@
         0
       ]
     },
-    "timestamp": 1486188064
+    "timestamp": 1486235860
   }
 }
