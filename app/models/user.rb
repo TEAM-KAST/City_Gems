@@ -1,9 +1,8 @@
 # require 'faker'
-
 class User < ApplicationRecord
   has_many :pins
   has_many :comments
-  # has_many :votes
+  has_many :pin_tag_votes
 
   def self.update_or_create(auth)
       user = User.find_by(uid: auth[:uid]) || User.new

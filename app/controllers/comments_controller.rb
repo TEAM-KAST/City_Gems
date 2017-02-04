@@ -10,15 +10,22 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new
+    if current_user
+      @comment = Comment.new
+    else
+      redirect_to root_path, notice: 'You have to be logged it to do that!!'
+    end
   end
 
   def edit
+    if current_user
+    else
+      redirect_to root_path, notice: 'You have to be logged it to do that!!'
+    end
   end
 
   def create
     @comment = Comment.new(comment_params)
-
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
@@ -39,9 +46,13 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+    if current_user
+      @comment.destroy
+      respond_to do |format|
+        format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      end
+    else
+      redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
   end
 
