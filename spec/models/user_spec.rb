@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
 
     describe 'associations' do
       xit { should have_many(:pins)}
-      xit { should have_many(:comments)}
+      it { is_expected.to have_many(:comments)}
       # it { should have_many(:votes)} if we have votes
     end
 
