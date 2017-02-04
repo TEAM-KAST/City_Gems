@@ -1,7 +1,7 @@
 <%= form_for(pin) do |f| %>
   <% if pin.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
+      <h2><%= pluralize(pin.errors.count, "error") %> prohibited this gem from being saved:</h2>
 
       <ul>
       <% pin.errors.full_messages.each do |message| %>
@@ -12,26 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :creator_id %>
-    <%= f.number_field :creator_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :appeal %>
+    <%= f.label :appeal, 'What do you love about this gem?' %>
     <%= f.text_area :appeal %>
   </div>
 
-  <div class="field">
-    <%= f.label :photo_url %>
-    <%= f.text_field :photo_url %>
-  </div>
+
 
   <div class="field">
-    <%= f.label :website %>
+    <%= f.label :website, 'Website URL' %>
     <%= f.text_field :website %>
   </div>
 
+  <div class="field" id="photo_upload">
+    <%= f.label :photo_url, 'Take or Upload a Picture' %>
+    <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera">
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Add Gem' %>
   </div>
 <% end %>

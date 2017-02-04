@@ -14,3 +14,73 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// this color is arbitrary and can change. I just needed a color to see the container effects
+body {
+  background-color: orange;
+}
+
+h1 {
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color: rgba(159,159,159,.7);
+  padding: .5em;
+}
+
+input.photo-submit {
+   background-color: rgba(159,159,159,.7);
+    border: none;
+    color: white;
+    vertical-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: .5em;
+    border-radius: 10px;
+    padding: .5em;
+    max-width: 90%;
+}
+
+#new-gem-link {
+  font-size: 3vh;
+  color: grey;
+  background-color: rgba(159,159,159,.7);
+  border-radius: 10px;
+  vertical-align: center;
+  display: block;
+  width: 80%;
+  text-align: center;
+}
+
+a.navbar-brand {
+  font-size: 2vh;
+  padding: 1.5em;
+
+}
+
+#footer-icons.ul {
+  border: 2px solid blue;
+}
+
+.form-container {
+  text-align: center;
+  font-size: 3vh;
+}
+
+#photo_upload {
+  margin-top: .5em;
+}
+
+.field label {
+  display: block;
+}
+
+#navbar-logo {
+  padding-left: .5em;
+  vertical-align: center;
+  max-height: 90%;
+}
+
+navbar-default {
+  background-color: rgba(159,159,159,.7);
+
+}
