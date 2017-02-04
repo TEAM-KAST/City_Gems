@@ -1,0 +1,114 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/apprentice/groovin-solo/City_Gems/app/helpers/application_helper.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/helpers/sessions_helper.rb": [
+        1,
+        1,
+        7,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/user.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/home_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/sessions_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1486179398
+  }
+}
