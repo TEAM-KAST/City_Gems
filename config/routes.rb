@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
+  resources :pins
 
   root to: "home#show"
 
-  resources :pins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'pins#index'
