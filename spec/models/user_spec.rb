@@ -10,15 +10,16 @@ RSpec.describe User, type: :model do
       User.update_or_create(auth)
       new_user = User.first
 
-      expect(new_user.provider).to eq("google")
       expect(new_user.uid).to eq("12345678910")
-      expect(new_user.email).to eq("jesse@mountainmantechnologies.com")
       expect(new_user.first_name).to eq("Jesse")
-      expect(new_user.last_name).to eq("Spevack")
-      expect(new_user.token).to eq("abcdefg12345")
-      expect(new_user.refresh_token).to eq("12345abcdefg")
       expect(new_user.oauth_expires_at).to eq(auth[:credentials][:expires_at])
-
     end
+
+    describe 'associations' do
+      xit { should have_many(:pins)}
+      xit { should have_many(:comments)}
+      # it { should have_many(:votes)} if we have votes
+    end
+
   end
 end
