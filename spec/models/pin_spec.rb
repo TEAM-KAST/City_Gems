@@ -11,6 +11,6 @@ RSpec.describe Pin, type: :model do
   describe 'associations' do
     xit { is_expected.to belong_to :creator }
     xit { is_expected.to have_many :comments }
-    xit { is_expected.to have_many :tags }
+    xit { is_expected.to have_many :pintags }
   end
 end
