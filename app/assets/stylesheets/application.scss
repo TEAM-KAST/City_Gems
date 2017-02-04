@@ -45,20 +45,39 @@ input.photo-submit {
   color: grey;
   background-color: rgba(159,159,159,.7);
   border-radius: 10px;
-  vertical-align: center;
+  margin: auto;
   display: block;
   width: 80%;
   text-align: center;
 }
 
+#map-placeholder {
+  height: 1000px;
+  width: 90%;
+  display: block;
+  margin: auto;
+  border: 2px solid red;
+  background-color: rgba(159,159,159,.7);
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border-radius: 10px;
+}
+
 a.navbar-brand {
   font-size: 2vh;
   padding: 1.5em;
-
 }
 
-#footer-icons.ul {
+
+
+#footer-icons {
   border: 2px solid blue;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height: 100px;
+  width:100%;
+  background:#999;
 }
 
 .form-container {
@@ -70,14 +89,45 @@ a.navbar-brand {
   margin-top: .5em;
 }
 
+#footer-icon-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2vh;
+  display: inline;
+}
+
+
+#login-icon {
+  margin-left: .5em;
+  display: inline-flex;
+  border: 2px solid blue;
+}
+#filter-icon {
+  margin: auto;
+  display: inline-flex;
+  border: 2px solid blue;
+}
+#menu-icon {
+  float: right;
+  display: inline-flex;
+  border: 2px solid blue;
+  margin-right: .5em;
+}
+
 .field label {
   display: block;
 }
 
 #navbar-logo {
   padding-left: .5em;
-  vertical-align: center;
+  float: left;
   max-height: 90%;
+}
+
+#sign_in {
+  float: right;
+  font-size: 2vh;
 }
 
 navbar-default {
