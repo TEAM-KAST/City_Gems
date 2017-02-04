@@ -1,5 +1,5 @@
 class PinTag < ApplicationRecord
-  belongs_to :pins
+  belongs_to :pin
   belongs_to :tag
 
 end
