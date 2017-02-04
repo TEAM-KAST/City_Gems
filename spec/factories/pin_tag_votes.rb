@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :pintagvotes do
-    pintag
+  factory :pin_tag_vote do
+    pin_tag
     user
   end
 end

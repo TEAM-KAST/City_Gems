@@ -5,7 +5,7 @@ RSpec.describe PinTag, type: :model do
     it { is_expected.to belong_to(:pin) }
     it { is_expected.to belong_to(:tag) }
 
-    xit { is_expected.to have_many(:pintagvotes)}
+    it { is_expected.to have_many(:pintagvotes)}
 
   end
 end
