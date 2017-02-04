@@ -11,6 +11,6 @@ RSpec.describe Comment, type: :model do
 
   describe 'associations' do
    it { is_expected.to belong_to :user }
-   xit { is_expected.to belong_to :pin }
+   it { is_expected.to belong_to :pin }
   end
 end
