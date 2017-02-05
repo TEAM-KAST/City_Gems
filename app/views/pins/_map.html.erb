@@ -13,6 +13,22 @@
 </head>
 <body>
 
+<style>
+
+#marker {
+    background-image: url('https://www.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+</style>
 
 <!-- <div id="map-placeholder"> -->
   <script>
@@ -56,7 +72,7 @@ map.on('load', function(){
   map.addSource('pins', {
    type: 'geojson',
    data: {
-       "type": "FeatureCollection",
+     "type": "FeatureCollection",
        "features": pinFeatures
     }
   });
@@ -76,6 +92,9 @@ map.on('load', function(){
 
 
 map.on('click', function(event) {
+  var popup = new mapboxgl.Popup({offset: 25})
+    .setText('Construction on the Washington Monument began in 1848.');
+
   var el = document.createElement('div');
   var marker = new mapboxgl.Marker(el)
   .setLngLat(event.lngLat)
@@ -88,9 +107,7 @@ map.on('click', function(event) {
     layout: {
       "icon-image": "star-15",
       "icon-allow-overlap": true
-
     }
-
   })
 
   map.getSource('pins').setData({
@@ -105,6 +122,9 @@ map.on('click', function(event) {
      }]
    });
 });
+
+var popup = new mapboxgl.Popup({offset: 25})
+    .setText('Construction on the Washington Monument began in 1848.');
 
 
 </script> <!-- end of base map -->
