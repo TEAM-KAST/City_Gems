@@ -86,45 +86,102 @@ map.on('load', function(){
       "icon-allow-overlap": true
     }
 
-  })
+  });
+
+  map.addSource('single-point', {
+    type: "geojson",
+    data: {
+      type: "FeatureCollection",
+      features: []
+    }
+  });
+
+  map.addLayer({
+    id:"point",
+    source: "single-point",
+    type: "symbol",
+    layout: {
+      "icon-image": "star-15",
+      "icon-allow-overlap": true
+    }
+
+  });
+
+
+
+
 });
 
 
 
 map.on('click', function(event) {
-  var popup = new mapboxgl.Popup({offset: 25})
-    .setText('Construction on the Washington Monument began in 1848.');
-
-  var el = document.createElement('div');
-  var marker = new mapboxgl.Marker(el)
-  .setLngLat(event.lngLat)
-  .addTo(map);
-
-  map.getLayer({
-    id:"pins",
-    type: "symbol",
-    source: "pins",
-    layout: {
-      "icon-image": "star-15",
-      "icon-allow-overlap": true
-    }
-  })
-
-  map.getSource('pins').setData({
-    type: 'FeatureCollection',
-    features: [{
-        "type": "Feature",
-        properties: {},
-        "geometry": {
-          type: "Point",
-          coordinates: [marker._lngLat.lng, marker._lngLat.lat]
-        }
-     }]
-   });
+  console.log(event)
+  map.getSource('single-point').setData({
+      type: 'FeatureCollection',
+      features: [{
+          "type": "Feature",
+          properties: {},
+          "geometry": {
+            type: "Point",
+            coordinates: [event.lngLat.lng, event.lngLat.lat]
+          }
+       }]
+     });
+  //
+//   var popup = new mapboxgl.Popup({offset: 25})
+//     .setText('Construction on the Washington Monument began in 1848.');
+//
+//   var el = document.createElement('div');
+//   var marker = new mapboxgl.Marker(el)
+//   .setLngLat(event.lngLat)
+//   .addTo(map);
+//
+//   var newPinFeatures = {
+//       "type": "Feature",
+//       "properties": {},
+//       "geometry": {
+//           "type": "Point",
+//           "coordinates": [marker._lngLat.lng, marker._lngLat.lat]
+//       }
+//    };
+//
+//    map.addSource('newPins', {
+//     type: 'geojson',
+//     data: {
+//       "type": "FeatureCollection",
+//         "features": newPinFeatures
+//      }
+//    });
+//
+//    map.addLayer({
+//      id:"newPins",
+//      type: "symbol",
+//      source: "pins",
+//      layout: {
+//        "icon-image": "star-15",
+//        "icon-allow-overlap": true
+//      }
+//    })
+//
+//
+//
+//   map.getSource('newPins').setData({
+//     type: 'FeatureCollection',
+//     features: [{
+//         "type": "Feature",
+//         properties: {},
+//         "geometry": {
+//           type: "Point",
+//           coordinates: [marker._lngLat.lng, marker._lngLat.lat]
+//         }
+//      }]
+//    });
+//
+//
 });
-
-var popup = new mapboxgl.Popup({offset: 25})
-    .setText('Construction on the Washington Monument began in 1848.');
+//
+// var popup = new mapboxgl.Popup({offset: 25})
+//     .setText('Construction on the Washington Monument began in 1848.');
 
 
 </script> <!-- end of base map -->

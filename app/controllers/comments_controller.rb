@@ -1,10 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-<<<<<<< HEAD
-  before_action :set_pin, only: [:new, :create]
-=======
   before_action :set_pin, only: [:new, :create, :edit, :update, :destroy]
->>>>>>> 366602318ab9758786190268d651d3ab753a8118
+
 
 
   def show
@@ -49,13 +46,7 @@ class CommentsController < ApplicationController
   def destroy
     if current_user
       @comment.destroy
-<<<<<<< HEAD
-      respond_to do |format|
-        format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully destroyed.' }
-      end
-=======
       redirect_to pin_path(@pin), notice: 'Comment was successfully destroyed.'
->>>>>>> 366602318ab9758786190268d651d3ab753a8118
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
@@ -70,10 +61,6 @@ class CommentsController < ApplicationController
       @pin = Pin.find(params[:pin_id])
     end
 
-<<<<<<< HEAD
-    # Never trust parameters from the scary internet, only allow the white list through.
-=======
->>>>>>> 366602318ab9758786190268d651d3ab753a8118
     def comment_params
       params.require(:comment).permit(:user_id, :content, :pin_id)
     end
