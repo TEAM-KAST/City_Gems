@@ -230,6 +230,8 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/Users/apprentice/groovin-solo/City_Gems/app/jobs/application_job.rb": [
@@ -253,15 +255,6 @@
       ],
       "/Users/apprentice/groovin-solo/City_Gems/app/models/pin.rb": [
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag_vote.rb": [
         0,
         0,
         0,
@@ -305,6 +298,6 @@
         0
       ]
     },
-    "timestamp": 1486329639
+    "timestamp": 1486332870
   }
 }
