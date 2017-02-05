@@ -58,6 +58,13 @@ map.addControl(new mapboxgl.GeolocateControl()); //creates 'my location' button
 
 ///////////////////////////////////////////////////////////////////////////////
 
+$('#map-placeholder').on('click', function(event){
+  event.preventDefault();
+  var $target = $(event.target)
+  console.log($target)
+  });
+
+
 map.on('load', function(){
 
   var pinFeatures = pins.map(function(pin){
@@ -119,7 +126,6 @@ map.on('load', function(){
 
 
 map.on('click', function(event) {
-  console.log(event)
   map.getSource('single-point').setData({
       type: 'FeatureCollection',
       features: [{
@@ -146,10 +152,11 @@ map.on('click', function(event) {
       ////creates popup
     var popup = new mapboxgl.Popup({offset:popupOffsets})
       .setLngLat(event.lngLat)
-      .setHTML('<a id="new-gem-link" href="/pins/new">Add a Gem!</a>') 
+      .setHTML('<a id="new-gem-link" href="/pins/new">Add Gem</a>')
   .addTo(map);
  });
     /////
+
 </script>
 
 </div>
