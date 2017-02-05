@@ -70,13 +70,13 @@ a.navbar-brand {
 
 
 #footer-icons {
-  border: 2px solid blue;
+  border-top: 2px solid grey;
   position:fixed;
   left:0px;
   bottom:0px;
   height: 100px;
   width:100%;
-  background:#999;
+  background: lightgrey;
 }
 
 .form-container {
@@ -86,6 +86,15 @@ a.navbar-brand {
 
 #photo_upload {
   margin-top: .5em;
+}
+
+#gem-show-container {
+  font-size: 3vh;
+  border: 2px solid blue;
+}
+
+#gem-show-link-container {
+
 }
 
 #footer-icon-list {
@@ -141,8 +150,14 @@ a.navbar-brand {
   font-size: 2vh;
 }
 
-navbar-default {
-  background-color: rgba(159,159,159,.7);
+.navbar-default {
+  // text-color: white;
+  // background: rgb(55, 185, 233); /* For browsers that do not support gradients */
+  // background: -webkit-linear-gradient(left, rgb(55, 185, 233) , rgb(29, 190, 183)); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(right, rgb(55, 185, 233), rgb(29, 190, 183)); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(right, rgb(55, 185, 233), rgb(29, 190, 183)); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(to right, rgb(55, 185, 233) , rgb(29, 190, 183)); /* Standard syntax */
+  background: lightgrey;
 }
 
 .model-link-container {

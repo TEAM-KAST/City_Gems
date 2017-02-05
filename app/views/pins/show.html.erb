@@ -1,23 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div id="gem-show-container"
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @pin.creator_id %>
-</p>
+  <p>
+    <strong>Creator:</strong>
+    <%= @pin.creator_id %>
+  </p>
 
-<p>
-  <strong>Appeal:</strong>
-  <%= @pin.appeal %>
-</p>
+  <p>
+    <strong>Appeal:</strong>
+    <%= @pin.appeal %>
+  </p>
 
-<div class="gem-show-img">
-  <img class="gem-img" src="<%= @pin.photo_url %>">
-<div>
+  <div class="gem-show-img">
+    <img class="gem-img" src="<%= @pin.photo_url %>">
+  <div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @pin.website %>
-</p>
+  <p>
+    <strong>Website:</strong>
+    <%= @pin.website %>
+  </p>
 
-<%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+  <h2>Comments</h2>
+    <% @pin.comments.each do |comment| %>
+  <p>
+    <b>Commenter:</b>
+    <%= comment.user.first_name + ' ' + comment.user.last_name %>
+  </p>
+
+  <p>
+    <b>Comment:</b>
+    <%= comment.body %>
+  </p>
+  <% end %>
+
+  <h2>Add a comment:</h2>
+  <%= form_for([@pin, @pin.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.label :body, 'Comment:' %><br />
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+
+  <div class="model-link-container" id="gem-show-link-container">
+    <%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
+    <%= link_to 'Back', pins_path %>
+  </div>
+</div>
