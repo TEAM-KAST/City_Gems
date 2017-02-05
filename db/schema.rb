@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170204223655) do
   end
 
   create_table "pins", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "creator_id"
     t.text     "appeal"
     t.string   "photo_url"
     t.string   "website"
