@@ -1,36 +1,119 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/groovin-solo/City_Gems/app/helpers/application_helper.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/helpers/application_helper.rb": [
         1,
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/helpers/sessions_helper.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/helpers/sessions_helper.rb": [
         1,
         1,
+        7,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/controllers/comments_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        0,
+        0,
         0,
         null,
         null,
         1,
         0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
         0,
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/helpers/pins_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/comment.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/models/comment.rb": [
         1,
         1,
         1,
@@ -39,28 +122,13 @@
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/application_record.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/models/pin.rb": [
         1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag_vote.rb": [
         1,
         1,
         1,
@@ -69,13 +137,31 @@
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/tag.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/models/pin_tag.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/models/pin_tag_vote.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/models/tag.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/user.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/models/user.rb": [
         null,
         1,
         1,
@@ -109,25 +195,25 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/channels/application_cable/channel.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/channels/application_cable/connection.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/application_controller.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/controllers/home_controller.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/comments_controller.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/controllers/pins_controller.rb": [
         0,
         0,
         0,
@@ -182,97 +268,6 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/home_controller.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/pins_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/sessions_controller.rb": [
         0,
         0,
         0,
@@ -286,7 +281,7 @@
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/tags_controller.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/controllers/tags_controller.rb": [
         0,
         0,
         0,
@@ -299,17 +294,17 @@
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/jobs/application_job.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/mailers/application_mailer.rb": [
+      "/Users/apprentice/stephen/City_Gems/City_Gems/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1486251830
+    "timestamp": 1486314872
   }
 }
