@@ -17,14 +17,13 @@
 
 // this color is arbitrary and can change. I just needed a color to see the container effects
 body {
-  background-color: orange;
+  background: rgb(255, 165, 0);
 }
 
 h1 {
-  border: 2px solid grey;
-  border-radius: 10px;
-  background-color: rgba(159,159,159,.7);
-  padding: .5em;
+  text-align: center;
+  padding: .1em;
+  font-size: 2.5vh;
 }
 
 input.photo-submit {
@@ -71,13 +70,13 @@ a.navbar-brand {
 
 
 #footer-icons {
-  border: 2px solid blue;
+  border-top: 2px solid grey;
   position:fixed;
   left:0px;
   bottom:0px;
   height: 100px;
   width:100%;
-  background:#999;
+  background: lightgrey;
 }
 
 .form-container {
@@ -87,6 +86,14 @@ a.navbar-brand {
 
 #photo_upload {
   margin-top: .5em;
+}
+
+#gem-show-container {
+  font-size: 3vh;
+}
+
+#gem-show-link-container {
+
 }
 
 #footer-icon-list {
@@ -115,8 +122,20 @@ a.navbar-brand {
   margin-right: .5em;
 }
 
+#pin_form {
+  max-width: 90%;
+  // max-height: 90%;
+  vertical-align: center;
+  margin: auto;
+}
+
+
 .field label {
   display: block;
+}
+
+.field input, textarea {
+  background-color: rgba(159,159,159,.7)
 }
 
 #navbar-logo {
@@ -130,7 +149,32 @@ a.navbar-brand {
   font-size: 2vh;
 }
 
-navbar-default {
-  background-color: rgba(159,159,159,.7);
+.navbar-default {
+  // text-color: white;
+  // background: rgb(55, 185, 233); /* For browsers that do not support gradients */
+  // background: -webkit-linear-gradient(left, rgb(55, 185, 233) , rgb(29, 190, 183)); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(right, rgb(55, 185, 233), rgb(29, 190, 183)); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(right, rgb(55, 185, 233), rgb(29, 190, 183)); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(to right, rgb(55, 185, 233) , rgb(29, 190, 183)); /* Standard syntax */
+  background: lightgrey;
+}
 
+.model-link-container {
+  margin: none;
+  font-size: 2.5vh;
+  text-align: center;
+}
+
+.model-link {
+  margin: auto;
+}
+
+#gem-show-link {
+  float: left;
+  padding-left: 1em;
+}
+
+#back-link {
+  float: right;
+  padding-right: 1em;
 }

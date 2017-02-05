@@ -1,24 +1,46 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @pin.user %>
-</p>
+<div id="gem-show-container"
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Appeal:</strong>
-  <%= @pin.appeal %>
-</p>
+  <p>
+    <strong>Creator:</strong>
+    <%= @pin.user %>
+  </p>
 
-<p>
-  <strong>Photo url:</strong>
-  <%= @pin.photo_url %>
-</p>
+  <p>
+    <strong>Appeal:</strong>
+    <%= @pin.appeal %>
+  </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @pin.website %>
-</p>
+  <div class="gem-show-img">
+    <img class="gem-img" src="<%= @pin.photo_url %>">
+  <div>
 
-<%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+  <p>
+    <strong>Website:</strong>
+    <%= @pin.website %>
+  </p>
+
+
+  <h2>Comments</h2>
+    <% @pin.comments.each do |comment| %>
+  <p>
+    <b>Commenter:</b>
+    <%= comment.user.first_name %>
+  </p>
+
+  <p>
+    <b>Comment:</b>
+    <%= comment.body %>
+  </p>
+  <% end %>
+
+  <h2>Add a comment:</h2>
+
+
+
+  <div class="model-link-container" id="gem-show-link-container">
+    <%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
+    <%= link_to 'Back', pins_path %>
+  </div>
+</div>
