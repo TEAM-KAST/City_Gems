@@ -1,9 +1,10 @@
+
 <div id="gem-show-container"
   <p id="notice"><%= notice %></p>
 
   <p>
     <strong>Creator:</strong>
-    <%= @pin.creator_id %>
+    <%= @pin.user.first_name %>
   </p>
 
   <p>
@@ -20,11 +21,12 @@
     <%= @pin.website %>
   </p>
 
+
   <h2>Comments</h2>
     <% @pin.comments.each do |comment| %>
   <p>
     <b>Commenter:</b>
-    <%= comment.user.first_name + ' ' + comment.user.last_name %>
+    <%= comment.user.first_name %>
   </p>
 
   <p>
@@ -33,11 +35,8 @@
   </p>
   <% end %>
 
-  <h2>Add a comment:</h2>
-
-
-
   <div class="model-link-container" id="gem-show-link-container">
+    <%= link_to 'Add a comment', new_comment_path(@comment) %> |
     <%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
     <%= link_to 'Back', pins_path %>
   </div>

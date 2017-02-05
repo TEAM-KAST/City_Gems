@@ -1,50 +1,46 @@
 
 <div id='pin_form'>
-  <%=  form_for(pin) do |f| %>
-    <% if pin.errors.any? %>
+  <%=  form_for(@pin) do |f| %>
+    <% if @pin.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(pin.errors.count, "error") %> prohibited this gem from being saved:</h2>
+        <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this gem from being saved:</h2>
 
         <ul>
-        <% pin.errors.full_messages.each do |message| %>
+        <% @pin.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
         </ul>
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :appeal, 'What do you love about this gem?' %>
-      <%= f.text_area :appeal %>
-    </div>
+  <div class="field">
+    <%= f.label :appeal, 'What do you love about this gem?' %>
+    <%= f.text_area :appeal %>
+  </div>
 
-    <div class="field">
-      <%= f.label :website, 'Website URL' %>
-      <%= f.text_field :website %>
-    </div>
+  <div class="field">
+    <%= f.label :website, 'Website URL' %>
+    <%= f.text_field :website %>
+  </div>
 
-    <div class="field">
-      <%= f.label :lat, 'Latitude' %>
-      <%= f.number_field :lat, step: :any %>
-    </div>
+  <div class="field">
+    <%= f.label :lat, 'Latitude' %>
+    <%= f.number_field :lat, step: :any %>
+  </div>
 
-    <div class="field">
-      <%= f.label :lat, 'Longitude' %>
-      <%= f.number_field :lng, step: :any%>
-    </div>
+  <div class="field">
+    <%= f.label :lat, 'Longitude' %>
+    <%= f.number_field :lng, step: :any%>
+  </div>
 
-    <div class="field" id="photo_upload">
-      <%= f.label :photo_url, 'Take or Upload a Picture' %>
-      <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera">
-    </div>
+  <div class="field" id="photo_upload">
+    <%= f.label :photo_url, 'Take or Upload a Picture' %>
+    <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera">
+  </div>
 
-    <div class="field" id="photo_add_url">
-      <%= f.label :photo_url, 'Or Post the url to a Public Picture of this Gem' %>
-      <%= f.text_field :photo_url %>
-    </div>
 
-    <div class="actions">
-      <%= f.submit 'Save' %>
-    </div>
-  <% end %>
-</div>
+  <div class="actions">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit 'Add Gem' %>
+  </div>
+<% end %>
