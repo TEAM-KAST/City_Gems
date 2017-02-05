@@ -23,15 +23,10 @@
   </div>
 
   <div class="field">
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-  </div>
-
-  <div class="field">
-    <%= f.hidden_field :pin_id, :value => @pin.id %>
+    <%= f.hidden_field :pin_id, :value => pin.id %>
   </div>
 
   <div class="actions">
-    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit %>
   </div>
 <% end %>
