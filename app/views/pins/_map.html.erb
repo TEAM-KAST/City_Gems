@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <!-- <html>
 <head>
     <meta charset='utf-8' />
     <title></title> -->
+    <div id="map-placeholder">
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <style>
@@ -13,16 +14,16 @@
 <body>
 
 
-<div id="map-placeholder">
+<!-- <div id="map-placeholder"> -->
   <script>
 
 var pins = <%== @pins.to_json %>;//nifty way to get Ruby info as json
 
 mapboxgl.accessToken = "<%== ENV['MAPBOX_API_KEY'] %>";
 var map = new mapboxgl.Map({
-    container: 'map', // container id
+    container: 'map-placeholder', // container id
     style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
-    center: [pins[0].lng, pins[0].lat], // starting position
+    center: [-122.3321, 47.6062], // starting position
     zoom: 11 // starting zoom
 });
 
