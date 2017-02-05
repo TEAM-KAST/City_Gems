@@ -2,7 +2,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @comment.author %>
+  <%= @comment.user.first_name %>
 </p>
 
 <p>
@@ -10,10 +10,6 @@
   <%= @comment.content %>
 </p>
 
-<p>
-  <strong>Pin:</strong>
-  <%= @comment.pin_id %>
-</p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
