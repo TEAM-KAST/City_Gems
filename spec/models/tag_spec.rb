@@ -18,7 +18,7 @@ RSpec.describe Tag, type: :model do
       expect(tag.label).to_not be_in Tag::TAGS
     end
 
-    it "is valid when it's quirky" do
+    it "is valid when it's Quirky" do
       tag.valid?
       expect(tag.errors[:label]).to be_empty
     end
