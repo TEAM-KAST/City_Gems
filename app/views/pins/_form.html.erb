@@ -1,10 +1,10 @@
-<%= form_for(pin) do |f| %>
-  <% if pin.errors.any? %>
+<%= form_for(@pin) do |f| %>
+  <% if @pin.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(pin.errors.count, "error") %> prohibited this gem from being saved:</h2>
+      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this gem from being saved:</h2>
 
       <ul>
-      <% pin.errors.full_messages.each do |message| %>
+      <% @pin.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -36,7 +36,9 @@
     <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera">
   </div>
 
+
   <div class="actions">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit 'Add Gem' %>
   </div>
 <% end %>

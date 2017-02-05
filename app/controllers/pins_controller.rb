@@ -26,6 +26,7 @@ class PinsController < ApplicationController
   def create
     if current_user
       @pin = Pin.new(pin_params)
+
       respond_to do |format|
         if @pin.save
           format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
@@ -61,6 +62,6 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:creator_id, :appeal, :photo_url, :website)
+      params.require(:pin).permit(:user_id, :appeal, :photo_url, :website)
     end
 end
