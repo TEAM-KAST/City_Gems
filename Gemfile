@@ -28,6 +28,8 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'faker', '~> 1.7.2'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -56,6 +58,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'simplecov', :require => false
   gem 'rack_session_access'
+  gem 'random-location'
 end
 
 group :development do

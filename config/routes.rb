@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
   get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
+  get 'auth/failure', to: 'pins#index'
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
   resources :tags, only: [:index, :show]
   resources :pins do
-    resources :comments
+    resources :comments, only: [:new, :create, :edit, :update, :show, :destroy]
   end
 
   root 'pins#index'

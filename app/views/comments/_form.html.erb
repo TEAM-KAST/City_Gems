@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_for [@pin, @comment] do |f| %>
+=======
+<%= form_for [@comment.pin, @comment] do |f| %>
+>>>>>>> 366602318ab9758786190268d651d3ab753a8118
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -11,11 +15,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :author %>
-    <%= f.text_field :user_id %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-  </div>
 
   <div class="field">
     <%= f.label :content %>
@@ -23,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= f.hidden_field :pin_id, :value => @pin.id %>
+    <%= f.hidden_field :pin_id, :value => @comment.pin.id %>
   </div>
 
   <div class="actions">
