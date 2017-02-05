@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :author %>
-    <%= f.number_field :author %>
+    <%= f.text_field :user_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
   <div class="field">
@@ -22,11 +23,15 @@
   </div>
 
   <div class="field">
-    <%= f.label :pin_id %>
-    <%= f.number_field :pin_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :pin_id, :value => @pin.id %>
   </div>
 
   <div class="actions">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit %>
   </div>
 <% end %>
