@@ -1,3 +1,5 @@
+#shouldn't this be the PinTagController
+
 class TagsController < ApplicationController
 
   def index
