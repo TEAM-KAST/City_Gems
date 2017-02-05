@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_pin, only: [:new, :create, :edit, :update, :destroy]
 
 
   def show
@@ -24,7 +25,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully created.' }
       else
         format.html { render :new }
       end
@@ -34,7 +35,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -44,21 +45,21 @@ class CommentsController < ApplicationController
   def destroy
     if current_user
       @comment.destroy
-      respond_to do |format|
-        format.html { redirect_to pin_comment_path, notice: 'Comment was successfully destroyed.' }
-      end
+      redirect_to pin_path(@pin), notice: 'Comment was successfully destroyed.'
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_pin
+      @pin = Pin.find(params[:pin_id])
+    end
+
     def comment_params
       params.require(:comment).permit(:user_id, :content, :pin_id)
     end
