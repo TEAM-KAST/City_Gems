@@ -5,6 +5,8 @@
 
 <%= link_to 'Add a Gem!', new_pin_path, id: 'new-gem-link' %>
 
+<p>Gems</p>
+
 <ul>
 <% @pins.each do |pin| %>
   <li><a href="/pins/<%= pin.id %>">

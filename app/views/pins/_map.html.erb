@@ -10,6 +10,13 @@
         body { margin:0; padding:0; }
         #map-placeholder { position:relative;  }
     </style>
+
+    <style>
+      .mapboxgl-popup {
+          max-width: 400px;
+          font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      }
+    </style>
 </head>
 <body>
 
@@ -107,9 +114,6 @@ map.on('load', function(){
 
   });
 
-
-
-
 });
 
 
@@ -126,64 +130,26 @@ map.on('click', function(event) {
             coordinates: [event.lngLat.lng, event.lngLat.lat]
           }
        }]
-     });
-  //
-//   var popup = new mapboxgl.Popup({offset: 25})
-//     .setText('Construction on the Washington Monument began in 1848.');
-//
-//   var el = document.createElement('div');
-//   var marker = new mapboxgl.Marker(el)
-//   .setLngLat(event.lngLat)
-//   .addTo(map);
-//
-//   var newPinFeatures = {
-//       "type": "Feature",
-//       "properties": {},
-//       "geometry": {
-//           "type": "Point",
-//           "coordinates": [marker._lngLat.lng, marker._lngLat.lat]
-//       }
-//    };
-//
-//    map.addSource('newPins', {
-//     type: 'geojson',
-//     data: {
-//       "type": "FeatureCollection",
-//         "features": newPinFeatures
-//      }
-//    });
-//
-//    map.addLayer({
-//      id:"newPins",
-//      type: "symbol",
-//      source: "pins",
-//      layout: {
-//        "icon-image": "star-15",
-//        "icon-allow-overlap": true
-//      }
-//    })
-//
-//
-//
-//   map.getSource('newPins').setData({
-//     type: 'FeatureCollection',
-//     features: [{
-//         "type": "Feature",
-//         properties: {},
-//         "geometry": {
-//           type: "Point",
-//           coordinates: [marker._lngLat.lng, marker._lngLat.lat]
-//         }
-//      }]
-//    });
-//
-//
-});
-//
-// var popup = new mapboxgl.Popup({offset: 25})
-//     .setText('Construction on the Washington Monument began in 1848.');
+     })
 
-
-</script> <!-- end of base map -->
+     var markerHeight = 10, markerRadius = 10, linearOffset = 25;
+     var popupOffsets = {
+       'top': [0, 0],
+       'top-left': [0,0],
+       'top-right': [0,0],
+       'bottom': [0, -markerHeight],
+       'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+       'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+       'left': [markerRadius, (markerHeight - markerRadius) * -1],
+       'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+     };
+      ////creates popup
+    var popup = new mapboxgl.Popup({offset:popupOffsets})
+      .setLngLat(event.lngLat)
+      .setHTML('<a id="new-gem-link" href="/pins/new">Add a Gem!</a>') 
+  .addTo(map);
+ });
+    /////
+</script>
 
 </div>

@@ -7,7 +7,7 @@
 
         <ul>
         <% @pin.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li class="error-li"><%= message %></li>
         <% end %>
         </ul>
       </div>
@@ -38,9 +38,14 @@
     <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera">
   </div>
 
+  <div class="field">
+    <%= f.label :photo_url, 'Or submit a link to a public photo of this gem' %>
+    <%= f.text_field :photo_url %>
+  </div>
+
 
   <div class="actions">
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit 'Add Gem' %>
+    <%= f.submit 'Save' %>
   </div>
 <% end %>
