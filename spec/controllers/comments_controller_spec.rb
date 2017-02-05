@@ -8,12 +8,6 @@ RSpec.describe CommentsController, type: :controller do
     request.session[:user_id] = user.id
   end
 
-  xdescribe "GET #show" do
-    it "assigns the requested comment as @comment" do
-      get :show, params: {id: comment.to_param}
-      expect(assigns(:comment)).to eq(comment)
-    end
-  end
 
   xdescribe "GET #new" do
     it "assigns a new comment as @comment" do
