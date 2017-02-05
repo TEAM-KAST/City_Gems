@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <!-- user login partial will go here with conditional logic -->
+<%= render partial: "pins/map" %>
 
-<p>hi</p>
+
 <ul>
 <% @pins.each do |pin| %>
   <li><a href="/pins/<%= pin.id %>">
@@ -11,7 +12,6 @@
 <% end %>
 </ul>
 
-<%= render partial: "pins/map" %>
 
 
 
