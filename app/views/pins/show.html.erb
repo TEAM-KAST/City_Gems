@@ -31,12 +31,12 @@
 
   <p>
     <b>Comment:</b>
-    <%= comment.body %>
+    <%= comment.content %>
   </p>
   <% end %>
 
   <div class="model-link-container" id="gem-show-link-container">
-    <%= link_to 'Add a comment', new_comment_path(@comment) %> |
+    <%= link_to 'Add a comment', new_pin_comment_path([@pin, @comment]) %> |
     <%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
     <%= link_to 'Back', pins_path %>
   </div>

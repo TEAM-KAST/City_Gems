@@ -8,8 +8,8 @@
 <p>
   <strong>Content:</strong>
   <%= @comment.content %>
-</p>
+</p>``
 
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', edit_pin_comment_path(@pin, @comment) %> |
+<%= link_to 'Back', pin_comment_path %>
