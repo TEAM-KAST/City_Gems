@@ -21,14 +21,16 @@
     <%= @pin.website %>
   </p>
 
-  <h2class="gem-show-subheader">People say this gem is:</h2>
+  <% if @pin.pin_tags %>
+    <h2class="gem-show-subheader">People say this gem is:</h2>
     <ul>
-      <% @pin.tags.each do |tag| %>
-      <li><%= tag.label %></li>
+      <% @pin.pin_tags.each do |pin_tag| %>
+      <li><%= pin_tag.tag.label %></li>
       <% end %>
     </ul>
+  <% end %>
 
-
+  <% if @pin.comments %>
   <h2 class="gem-show-subheader">Comments</h2>
     <% @pin.comments.each do |comment| %>
       <p>
@@ -43,8 +45,8 @@
 
       <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin) %> |
       <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
-  <% end %>
-
+    <% end %>
+<% end %>
 
   <div class="model-link-container" id="gem-show-link-container">
     <%= link_to 'Add a Comment', new_pin_comment_path(@pin) %> |
