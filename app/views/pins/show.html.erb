@@ -24,19 +24,20 @@
 
   <h2>Comments</h2>
     <% @pin.comments.each do |comment| %>
-  <p>
-    <b>Commenter:</b>
-    <%= comment.user.first_name %>
-  </p>
+      <p>
+        <b>Commenter:</b>
+        <%= comment.user.first_name %>
+      </p>
 
-  <p>
-    <b>Comment:</b>
-    <%= comment.content %>
-  </p>
+      <p>
+        <b>Comment:</b>
+        <%= comment.content %>
+      </p>
 
-  <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin) %> |
-  <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
+      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin) %> |
+      <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
   <% end %>
+
 
   <div class="model-link-container" id="gem-show-link-container">
     <%= link_to 'Add a Comment', new_pin_comment_path(@pin) %> |
