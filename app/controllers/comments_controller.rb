@@ -1,10 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
-  # do we need this?
-  # def index
-  #   @comments = Comment.all
-  # end
 
   def show
   end
@@ -49,7 +45,7 @@ class CommentsController < ApplicationController
     if current_user
       @comment.destroy
       respond_to do |format|
-        format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+        format.html { redirect_to pin_comment_path, notice: 'Comment was successfully destroyed.' }
       end
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
