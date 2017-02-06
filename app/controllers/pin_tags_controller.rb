@@ -24,15 +24,15 @@ class PinTagsController < ApplicationController
 
   end
 
-  # def update
-  #   respond_to do |format|
-  #     if @pintag.update(pintag_params)
-  #       format.html { redirect_to "/pins/#{@pintag.pin_id,  notice: 'tag added.' }
-  #     else
-  #       format.html { render :edit }
-  #     end
-  #   end
-  # end
+#   def update
+#     respond_to do |format|
+#       if @pintag.update(pintag_params)
+#         format.html { redirect_to "/pins/#{@pintag.pin_id,  notice: 'tag added.' }
+#       else
+#         format.html { render :edit }
+#       end
+#     end
+#   end
 
   private
     def set_pin
