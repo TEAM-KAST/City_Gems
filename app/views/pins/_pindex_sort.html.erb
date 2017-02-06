@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <td><h3><%= sort_link(@q, :name, 'Gem') %></h3></td>
+      <td><h3><%= sort_link(@q, :appeal, "What people love about it") %></h3></td>
+      <td><h3><%= sort_link(@q, :pin_tags, "Tags") %></h3></td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+        <td> <%= pin.name.titlecase %> </td>
+        <td> <%= pin.appeal.capitalize %> </td>
+        <td> <%= pin.pin_tags %> </td>
+        <td class="td_link">  <%= link_to 'Show', pin %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
