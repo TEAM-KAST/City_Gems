@@ -4,6 +4,6 @@ class Tag < ApplicationRecord
   TAGS = %w(natural historical artistic quirky beautiful cultural)
 
   validates :label, presence: true,
-    inclusion: { in: TAGS, message: "%{value} is not one of the tags" }
+    inclusion: { in: %w(Beautiful, Cultural, Quirky, Artistic, Historical, Natural), message: "%{value} is not one of the tags" }
 
 end
