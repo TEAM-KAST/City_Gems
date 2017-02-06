@@ -4,6 +4,7 @@ require 'random-location'
 Pin.delete_all
 Comment.delete_all
 Tag.delete_all
+PinTag.delete_all
 
 Tag.create(label: "Natural")
 Tag.create(label: "Historical")
@@ -25,3 +26,5 @@ Pin.create(user_id: 1, appeal: "It's one of the most beautiful spots in Washingt
 300.times {
   Comment.create(user_id: Random.rand(30), content: Faker::StarWars.quote, pin_id: Random.rand(200) )
 }
+
+200.times {PinTag.create(tag_id: Random.rand(6), pin_id: Random.rand(300))}
