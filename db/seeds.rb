@@ -15,7 +15,7 @@ Tag.create(label: "Cultural")
 Pin.create(user_id: 1, appeal: "It's one of the most beautiful spots in Washington...", photo_url: "https://swwhitaker.github.io/images/whitaker_snoqualmie.jpg", website: "stephenwhitakerimages.com", lat: 47.541721, lng: -121.837702)
 
 200.times {
-  Pin.create(user_id: Random.rand(5), appeal: Faker::StarWars.quote,
+  Pin.create(user_id: Random.rand(5), appeal: Faker::StarWars.quote, name: Faker::Hipster.sentences(1)[0],
     photo_url: Faker::Avatar.image,
     website: Faker::Internet.url,
     lat: RandomLocation.near_by(47.5979520, -122.3349440, 1000)[0],
