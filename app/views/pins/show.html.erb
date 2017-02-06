@@ -36,7 +36,7 @@
 </div>
 
   <% if @pin.comments %>
-  <h2 class="gem-show-subheader">Comments</h2>
+  <h2 class="gem-show-subheader">Comments:</h2>
     <% @pin.comments.each do |comment| %>
       <p>
         <b>Commenter:</b>
@@ -48,7 +48,7 @@
         <%= comment.content %>
       </p>
 
-      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin) %> |
+      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment) %> |
       <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
     <% end %>
 <% end %>
