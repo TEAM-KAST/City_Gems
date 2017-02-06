@@ -1,21 +1,11 @@
 
-
-
-
-
-
-
-
-
-
 require 'faker'
 require 'random-location'
 
-Tag.delete_all
 PinTag.delete_all
 Pin.delete_all
 Comment.delete_all
-
+Tag.delete_all
 
   Tag.create(label: "Natural")
   Tag.create(label: "Historical")
