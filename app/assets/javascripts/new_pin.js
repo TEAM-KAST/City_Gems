@@ -1,13 +1,18 @@
 $(document).ready(function() {
-  $("PLACE ON MAP").on("click", function(event){
-    event.preventDefault()
-
-      $.ajax({
-        url: '/prototypes/' + id,
-        type: 'get',
-      }).done(function(data){
-        $this.append(data)
+  console.log("I'm LISTENING!!!!")
+  $("#map-placeholder").on("click", "#new-gem-button", function(event){
+      console.log("I LISTENED!!!!")
+      event.preventDefault()
+      var url = $(event.target).attr('href');
+      console.log(url);
+        $.ajax({
+          url: url,
+          type: 'get'
+        }).done(function(data){
+          console.log(data)
+          var popupForm = $(data).children('section')
+          $('body').append(popupForm)
+          $('.mapboxgl-popup').remove();
+        })
       })
-
     })
-  })
