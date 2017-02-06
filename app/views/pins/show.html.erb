@@ -21,14 +21,19 @@
     <%= @pin.website %>
   </p>
 
+<div id="tags-container">
   <% if @pin.pin_tags %>
-    <h2class="gem-show-subheader">People say this gem is:</h2>
+    <h2 class="gem-show-subheader">People say this gem is:</h2>
     <ul>
       <% @pin.pin_tags.each do |pin_tag| %>
       <li><%= pin_tag.tag.label %></li>
       <% end %>
     </ul>
   <% end %>
+
+  <%= render partial: 'pintags/form', locals: {pin: @pin, pintag: PinTag.new} %>
+
+</div>
 
   <% if @pin.comments %>
   <h2 class="gem-show-subheader">Comments</h2>
