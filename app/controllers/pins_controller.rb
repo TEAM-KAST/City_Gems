@@ -2,7 +2,8 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pins = Pin.all
+    @q = Pin.ransack(params[:q])
+    @pins = @q.result(distinct: @true)
   end
 
   def show
