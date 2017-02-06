@@ -7,11 +7,11 @@ class Pin < ApplicationRecord
   validates_numericality_of :user_id, :lat, :lng
 
   def self.tags(pin)
-  	tagnames = ""
+  	tag_names = ""
   	pin.pin_tags.each do |pt|
-  		tagnames << Tag.find_by(id: pt.tag_id).label + ", "
+  		tagnames << "#{Tag.find_by(id: pt.tag_id).label}, "
   	end 
-  	tagnames.chomp(', ')
+  	tag_names.chomp(', ')
   end
 
 end

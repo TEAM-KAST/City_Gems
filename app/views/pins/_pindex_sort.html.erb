@@ -12,8 +12,7 @@
       <tr>
         <td class="td_link">  <%= link_to "#{pin.name.titlecase}", pin %></td>
         <td> <%= pin.appeal.capitalize %> </td>
-        <td> <%= pin.pin_tags.each {|pt| Tag.find(pt.tag_id).label + " | "} %> </td>
-        
+        <td> <%= Pin.tags(pin) %> </td>       
       </tr>
     <% end %>
   </tbody>
