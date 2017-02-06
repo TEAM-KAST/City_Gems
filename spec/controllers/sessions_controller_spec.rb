@@ -53,7 +53,6 @@ xdescribe SessionsController do
   end
 
   describe "#new" do
-
     it 'responds with status code 200' do
       get :new
       expect(response).to have_http_status 200
