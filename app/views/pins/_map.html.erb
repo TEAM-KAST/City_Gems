@@ -64,7 +64,8 @@ map.on('load', function(){
       "type": "Feature",
       "properties": {
         name: pin.name,
-        pinId: pin.id
+        pinId: pin.id,
+        appeal: pin.appeal
       },
       "geometry": {
           "type": "Point",
@@ -158,10 +159,11 @@ map.on('load', function(){
      var feature = features[0];
      // Populate the popup and set its coordinates
       // based on the feature found.
+      debugger;
       var link = '/pins/'+feature.properties.pinId;
       var popup = new mapboxgl.Popup()
           .setLngLat(feature.geometry.coordinates)
-          .setHTML('<a href="'+link+'">'+feature.properties.name+'</a>')
+          .setHTML('<a href="'+link+'">'+feature.properties.appeal+'</a>')
           .addTo(map);
   });
 
