@@ -14,6 +14,10 @@ class PinsController < ApplicationController
       @pin = Pin.new
       @pin.lat = params[:latitude]
       @pin.lng = params[:longitude]
+      respond_to do |format|
+        format.html { render 'new_popup', layout: false }
+        format.js
+      end
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
