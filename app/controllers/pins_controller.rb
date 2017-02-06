@@ -2,7 +2,8 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pins = Pin.all
+    @q = Pin.ransack(params[:q])
+    @pins = @q.result(distinct: @true)
   end
 
   def show
@@ -63,6 +64,6 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:user_id, :appeal, :photo_url, :website, :lat, :lng)
+      params.require(:pin).permit(:user_id, :name, :appeal, :photo_url, :website, :lat, :lng)
     end
 end

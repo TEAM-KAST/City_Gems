@@ -18,17 +18,13 @@
 
   <p>
     <strong>Website:</strong>
-    <%= @pin.website %>
+    <a href="<%= @pin.website %>"><%= @pin.website %></a>
   </p>
 
 <div id="tags-container">
   <% if @pin.pin_tags %>
     <h2 class="gem-show-subheader">People say this gem is:</h2>
-    <ul>
-      <% @pin.pin_tags.each do |pin_tag| %>
-      <li><%= pin_tag.tag.label %></li>
-      <% end %>
-    </ul>
+    <p><%=Pin.tags(@pin)%></p>
   <% end %>
 
   <%= render partial: 'pintags/form', locals: {pin: @pin, pintag: PinTag.new} %>
@@ -36,7 +32,7 @@
 </div>
 
   <% if @pin.comments %>
-  <h2 class="gem-show-subheader">Comments</h2>
+  <h2 class="gem-show-subheader">Comments:</h2>
     <% @pin.comments.each do |comment| %>
       <p>
         <b>Commenter:</b>
@@ -48,7 +44,7 @@
         <%= comment.content %>
       </p>
 
-      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin) %> |
+      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment) %> |
       <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
     <% end %>
 <% end %>

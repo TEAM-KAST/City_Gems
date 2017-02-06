@@ -15,6 +15,12 @@
 
     <%= f.hidden_field :lat %>
     <%= f.hidden_field :lng%>
+
+    <div class="field">
+      <%= f.label :name, 'What is this gem called?' %>
+      <%= f.text_area :name %>
+    </div>
+
     <div class="field">
       <%= f.label :appeal, 'What do you love about this gem?' %>
       <%= f.text_area :appeal %>

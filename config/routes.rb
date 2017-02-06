@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'pin_tags', to: 'pin_tags#create', as: 'pin_tags'
 
   resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
+  # resource :home, only: [:show]
   resources :tags, only: [:index, :show]
   resources :pin_tags, only: [:new, :create]
   resources :pins do
