@@ -9,8 +9,10 @@
 
     <style>
       .mapboxgl-popup {
-          max-width: 400px;
+          max-height: 100px;
+          max-width: 200px;
           font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+          position: relative;
       }
     </style>
   </div>
@@ -28,9 +30,7 @@
     cursor: pointer;
 }
 
-.mapboxgl-popup {
-    max-width: 200px;
-}
+
 
 </style>
 
@@ -118,6 +118,8 @@ map.on('load', function(){
 
 
 map.on('click', function(event) {
+   longitude = event.lngLat.lng;
+   latitude = event.lngLat.lat;
   map.getSource('single-point').setData({
       type: 'FeatureCollection',
       features: [{
@@ -129,7 +131,7 @@ map.on('click', function(event) {
           }
        }]
      })
-
+      map.flyTo({center: [event.lngLat.lng, event.lngLat.lat]});
      var markerHeight = 10, markerRadius = 10, linearOffset = 25;
      var popupOffsets = {
        'top': [0, 0],

@@ -2,15 +2,3 @@
 
 <!-- user login partial will go here with conditional logic -->
 <%= render partial: "pins/map" %>
-
-<%= link_to 'Add a Gem!', new_pin_path, id: 'new-gem-link' %>
-
-<p>Gems</p>
-
-<ul>
-<% @pins.each do |pin| %>
-  <li><a href="/pins/<%= pin.id %>">
-    <%= pin.appeal %>
-  </a></li>
-<% end %>
-</ul>

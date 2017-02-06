@@ -31,7 +31,7 @@ class PinsController < ApplicationController
       @pin = Pin.new(pin_params)
       respond_to do |format|
         if @pin.save
-          format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
+          format.html { redirect_to @pin, notice: 'Gem was successfully created.' }
         else
           format.html { render :new }
         end
@@ -44,7 +44,7 @@ class PinsController < ApplicationController
   def update
     respond_to do |format|
       if @pin.update(pin_params)
-        format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
+        format.html { redirect_to @pin, notice: 'Gem was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -54,7 +54,7 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     respond_to do |format|
-      format.html { redirect_to pins_url, notice: 'Pin was successfully destroyed.' }
+      format.html { redirect_to pins_url, notice: 'Gem was successfully destroyed.' }
     end
   end
 
