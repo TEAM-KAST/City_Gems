@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: 'pins#index'
   get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  get 'explore', to: 'pins#explore', as: 'explore'
+  post 'explore', to: 'pins#filter'
+
   post 'pin_tags', to: 'pin_tags#create', as: 'pin_tags'
 
   resources :sessions, only: [:create, :destroy]
@@ -11,12 +15,7 @@ Rails.application.routes.draw do
   resources :pin_tags, only: [:new, :create]
   resources :pins do
     resources :comments, only: [:new, :create, :edit, :update, :show, :destroy]
-
   end
 
   root 'pins#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-
 end

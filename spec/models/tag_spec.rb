@@ -18,12 +18,12 @@ RSpec.describe Tag, type: :model do
       expect(tag.label).to_not be_in Tag::TAGS
     end
 
-    it "is valid when it's quirky" do
+    it "is valid when it's Quirky" do
       tag.valid?
       expect(tag.errors[:label]).to be_empty
     end
 
-    it "is NOT valid when it's pineapple" do
+    it "is NOT valid even if it's 'super dope'" do
       tag.label = "super dope"
       tag.valid?
       expect(tag.errors[:label]).to_not be_empty
