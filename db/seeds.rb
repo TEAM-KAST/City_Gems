@@ -17,16 +17,16 @@ Pin.create(user_id: 1, name: "Snoqualmie Falls", appeal: "It's one of the most b
 PinTag.create(pin_id: 1, tag_id: 1)
 PinTag.create(pin_id: 1, tag_id: 5)
 
-30.times {
-  Pin.create(user_id: Random.rand(5), name: Faker::Hipster.sentences(1)[0], appeal: Faker::StarWars.quote,
+10.times {
+  Pin.create(user_id: 1, name: Faker::Hipster.sentences(1)[0], appeal: Faker::StarWars.quote,
     photo_url: Faker::Avatar.image,
     website: Faker::Internet.url,
     lat: 47.5979520,
     lng: -122.3349440 )
 }
 
-30.times {
-  Comment.create(user_id: 1, content: Faker::StarWars.quote, pin_id: Random.rand(15) )
+10.times {
+  Comment.create(user_id: 1, content: Faker::StarWars.quote, pin_id: Random.rand(8) )
 }
 
-300.times {PinTag.create(tag_id: Random.rand(6), pin_id: Random.rand(15))}
+30.times {PinTag.create(tag_id: Random.rand(6), pin_id: Random.rand(8))}
