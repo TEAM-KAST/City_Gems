@@ -15,7 +15,7 @@ class PinsController < ApplicationController
       @pin.lat = params[:latitude]
       @pin.lng = params[:longitude]
       respond_to do |format|
-        format.html { render 'new_popup', layout: false }
+        format.html { render 'new' }
         format.js
       end
     else
