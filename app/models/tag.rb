@@ -1,9 +1,9 @@
 class Tag < ApplicationRecord
   has_many :pin_tags
 
-  TAGS = %w(natural historical artistic quirky beautiful cultural)
+  TAGS = %w(Natural Historical Artistic Quirky Cultural Beautiful)
 
   validates :label, presence: true,
-    inclusion: { in: %w(Beautiful, Cultural, Quirky, Artistic, Historical, Natural), message: "%{value} is not one of the tags" }
+    inclusion: { in: %w(Natural Historical Artistic Quirky Cultural Beautiful), message: "%{value} is not one of the tags" }
 
 end
