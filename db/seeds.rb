@@ -3,6 +3,14 @@ require 'random-location'
 
 Pin.delete_all
 Comment.delete_all
+Tag.delete_all
+
+Tag.create(label: "Natural")
+Tag.create(label: "Historical")
+Tag.create(label: "Artistic")
+Tag.create(label: "Quirky")
+Tag.create(label: "Beautiful")
+Tag.create(label: "Cultural")
 
 Pin.create(user_id: 1, appeal: "It's one of the most beautiful spots in Washington...", photo_url: "https://swwhitaker.github.io/images/whitaker_snoqualmie.jpg", website: "stephenwhitakerimages.com", lat: 47.541721, lng: -121.837702)
 
