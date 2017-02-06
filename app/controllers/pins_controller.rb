@@ -16,7 +16,8 @@ class PinsController < ApplicationController
 
 #the post action for the params for the explore view
   def filter
-    @filter_tag = params['/explore'][:tag_id]
+    @filter_tag = params['/explore'][:tag_id] # <---- this is how I've been accessing the tag_id from the explore page. 
+  # It's ugly could definitely use some refactoring
     redirect_to root_path
   end
 
