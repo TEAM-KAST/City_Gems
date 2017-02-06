@@ -117,8 +117,8 @@ map.on('load', function(){
 
     // When a click event occurs near a place, open a popup at the location of
   // the feature, with description HTML from its properties.
-  map.on('click', function (e) {
-      var features = map.queryRenderedFeatures(e.point, { layers: ['pins'] });
+  map.on('click', function (event) {
+      var features = map.queryRenderedFeatures(event.point, { layers: ['pins'] });
 
      if (!features.length) {
        longitude = event.lngLat.lng;
@@ -175,12 +175,6 @@ map.on('load', function(){
 });
 
 });
-
-
-
-    /////
-
-
 
 
 </script>
