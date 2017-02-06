@@ -9,20 +9,20 @@
       "/Users/apprentice/groovin-solo/City_Gems/app/helpers/sessions_helper.rb": [
         1,
         1,
-        14,
+        21,
         null,
         null,
         1,
-        0,
+        2,
         null,
         null,
         1,
-        0,
+        4,
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null
       ],
@@ -172,6 +172,20 @@
         null,
         null
       ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/apprentice/groovin-solo/City_Gems/app/models/pin.rb": [
         1,
         1,
@@ -191,9 +205,23 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/application_record.rb": [
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag.rb": [
         1,
         1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/groovin-solo/City_Gems/app/models/tag.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/apprentice/groovin-solo/City_Gems/app/models/user.rb": [
@@ -204,8 +232,8 @@
         1,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
@@ -215,8 +243,8 @@
         null,
         null,
         null,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
@@ -229,27 +257,6 @@
         null,
         null,
         null
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/comment.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
       ],
       "/Users/apprentice/groovin-solo/City_Gems/app/controllers/pin_tags_controller.rb": [
         0,
@@ -325,37 +332,8 @@
         0,
         0,
         0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/tag.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1486410622
+    "timestamp": 1486412345
   }
 }
