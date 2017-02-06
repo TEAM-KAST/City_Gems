@@ -25,10 +25,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'dotenv-rails', :groups => [:development, :test]
 # gem for user authentification with Google
 gem "omniauth-google-oauth2", "~> 0.2.1"
-
 gem 'bootstrap-sass', '~> 3.3.6'
-
 gem 'faker', '~> 1.7.2'
+gem 'ransack'
 
 
 
