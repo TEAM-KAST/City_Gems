@@ -5,6 +5,7 @@ RSpec.describe Pin, type: :model do
     it { is_expected.to validate_numericality_of :lat }
     it { is_expected.to validate_numericality_of :lng }
     it { is_expected.to validate_numericality_of :user_id }
+      it { is_expected.to validate_presence_of :name }
     it { is_expected.to validate_presence_of :appeal }
     it { is_expected.to validate_presence_of :lat }
     it { is_expected.to validate_presence_of :lng }

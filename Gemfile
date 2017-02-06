@@ -57,7 +57,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'simplecov', :require => false
   gem 'rack_session_access'
-  gem 'random-location'
+  # gem 'random-location'
 end
 
 group :development do

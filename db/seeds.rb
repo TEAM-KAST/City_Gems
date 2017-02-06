@@ -1,5 +1,4 @@
 require 'faker'
-require 'random-location'
 
 Pin.delete_all
 Comment.delete_all
@@ -22,8 +21,8 @@ PinTag.create(pin_id: 1, tag_id: 5)
   Pin.create(user_id: Random.rand(5), name: Faker::Hipster.sentences(1)[0], appeal: Faker::StarWars.quote,
     photo_url: Faker::Avatar.image,
     website: Faker::Internet.url,
-    lat: RandomLocation.near_by(47.5979520, -122.3349440, 1000)[0],
-    lng: RandomLocation.near_by(47.5979520, -122.3349440, 1000)[1] )
+    lat: 47.5979520,
+    lng: -122.3349440 )
 }
 
 30.times {
