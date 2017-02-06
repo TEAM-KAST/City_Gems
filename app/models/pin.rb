@@ -9,7 +9,7 @@ class Pin < ApplicationRecord
   def self.tags(pin)
   	tag_names = ""
   	pin.pin_tags.each do |pt|
-  		tagnames << "#{Tag.find_by(id: pt.tag_id).label}, "
+  		tag_names << "#{Tag.find_by(id: pt.tag_id).label}, "
   	end 
   	tag_names.chomp(', ')
   end
