@@ -144,9 +144,11 @@ map.on('click', function(event) {
        'right': [-markerRadius, (markerHeight - markerRadius) * -1]
      };
       ////creates popup
+
+      var link = '/pins/new?longitude='+ event.lngLat.lng + '&latitude='+ event.lngLat.lat
     var popup = new mapboxgl.Popup({offset:popupOffsets})
       .setLngLat(event.lngLat)
-      .setHTML('<a id="new-gem-button" href="/pins/new">Add Gem</a>')
+      .setHTML('<a id="new-gem-button" href="'+link+'">Add Gem</a>')
   .addTo(map);
  });
     /////

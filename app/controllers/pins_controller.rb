@@ -11,11 +11,10 @@ class PinsController < ApplicationController
   def new
     if current_user
       @pin = Pin.new
-      if request.xhr?
-        render :_form, layout:false
-      else
+      @pin.lat = params[:latitude]
+      @pin.lng = params[:longitude]
+    else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
-      end
     end
   end
 
