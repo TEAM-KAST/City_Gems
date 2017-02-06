@@ -13,7 +13,7 @@ Tag.create(label: "Quirky")
 Tag.create(label: "Beautiful")
 Tag.create(label: "Cultural")
 
-Pin.create(user_id: 1, name: "Pretty Waterfalls", appeal: "It's one of the most beautiful spots in Washington...", photo_url: "https://swwhitaker.github.io/images/whitaker_snoqualmie.jpg", website: "stephenwhitakerimages.com", lat: 47.541721, lng: -121.837702)
+Pin.create(user_id: 1, name: "Snoqualmie Falls", appeal: "It's one of the most beautiful spots in Washington...", photo_url: "https://swwhitaker.github.io/images/whitaker_snoqualmie.jpg", website: "stephenwhitakerimages.com", lat: 47.541721, lng: -121.837702)
 
 30.times {
   Pin.create(user_id: Random.rand(5), name: Faker::Hipster.sentences(1)[0], appeal: Faker::StarWars.quote,
