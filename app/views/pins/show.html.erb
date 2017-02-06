@@ -18,17 +18,13 @@
 
   <p>
     <strong>Website:</strong>
-    <%= @pin.website %>
+    <a href="<%= @pin.website %>"><%= @pin.website %></a>
   </p>
 
 <div id="tags-container">
   <% if @pin.pin_tags %>
     <h2 class="gem-show-subheader">People say this gem is:</h2>
-    <ul>
-      <% @pin.pin_tags.each do |pin_tag| %>
-      <li><%= pin_tag.tag.label %></li>
-      <% end %>
-    </ul>
+    <p><%=Pin.tags(@pin)%></p>
   <% end %>
 
   <%= render partial: 'pintags/form', locals: {pin: @pin, pintag: PinTag.new} %>

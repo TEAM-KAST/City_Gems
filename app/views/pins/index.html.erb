@@ -5,18 +5,7 @@
 
 <%= link_to 'Add a Gem!', new_pin_path, id: 'new-gem-link' %>
 
+<%= render 'search_form' %>
 
-<%= search_form_for @q do |f| %>
-  <%= f.collection_select(:pin_tags_id_eq, Tag.all, :id, :label, prompt: true) %>
-  <%= f.label :name_cont, "Gem Name Contains" %>
-  <%= f.search_field :name_cont, placeholder: "leave blank to show all gems" %>
-  <%= f.label :appeal_cont, "Description Keyword" %>
-  <%= f.search_field :appeal_cont, placeholder: "leave blank to show all gems" %>
-  <%= f.label :user_first_name_cont, "Gem Author's First Name" %>
-  <%= f.search_field :user_first_name_cont, placeholder: "leave blank to show all" %>
-  <%= f.label :user_last_name_cont, "Gem Author's Last Name" %>
-  <%= f.search_field :user_last_name_cont, placeholder: "leave blank to show all" %>
-
-  <%= f.submit %>
-<% end %>
+<%= render 'pindex_sort' %>
 

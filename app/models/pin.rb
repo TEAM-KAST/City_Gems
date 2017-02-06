@@ -5,4 +5,13 @@ class Pin < ApplicationRecord
 
   validates_presence_of :user_id, :lat, :lng, :appeal
   validates_numericality_of :user_id, :lat, :lng
+
+  def self.tags(pin)
+  	tag_names = ""
+  	pin.pin_tags.each do |pt|
+  		tag_names << "#{Tag.find_by(id: pt.tag_id).label}, "
+  	end 
+  	tag_names.chomp(', ')
+  end
+
 end
