@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_pin, only: [:new, :create, :edit, :update, :destroy]
 
 
+
   def show
   end
 
