@@ -1,0 +1,11 @@
+<div class="filter-tags-container">
+  <div class="filter-tags-form">
+  <%= form_for (explore_path) do |f| %>
+    <%= f.label :pin_tag, "Tags" %>
+    <%= f.collection_select(:tag, @tags, :id, :label) %>
+    <%= f.submit %>
+  <% end %>
+  </div>
+</div>
+
+ <!-- THIS NEEDS TO BE REFACTORED TO BE A PARTIAL ON THE INDEX PAGE -->

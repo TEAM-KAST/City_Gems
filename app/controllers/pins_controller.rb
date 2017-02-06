@@ -2,10 +2,26 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pins = Pin.all
+    if @filter_tag
+      @pin_tags = PinTag.where(tag_id: @filter_tag)
+    else
+      @pins = Pin.all
+    end
+  end
+
+#this takes you to the filter/ "Go Exploring" view
+  def explore
+    @tags = Tag.all
+  end
+
+#the post action for the params for the explore view
+  def filter
+    @filter_tag = params['/explore'][:tag_id]
+    redirect_to root_path
   end
 
   def show
+    @pin_tags = PinTag.where(pin_id: @pin.id)
   end
 
   def new

@@ -6,8 +6,12 @@
 
 <%= link_to 'Add a Gem!', new_pin_path, id: 'new-gem-link' %>
 
+
 <p>Gems</p>
 <ul>
+  <% if @pin_tags %>
+  <% @pin_tags.each do |pin| %>
+
 <% @pins.each do |pin| %>
   <li><a href="/pins/<%= pin.id %>">
     <%= pin.appeal %>
