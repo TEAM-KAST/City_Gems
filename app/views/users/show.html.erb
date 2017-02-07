@@ -19,7 +19,11 @@
     <% @commented.each do |pin| %>
       <li>
         <strong> <%= link_to pin.name, pin_path(pin) %></strong>
-        <p> My comment(s): </p>
+        <% if pin.comments.where(user_id: @user.id).length > 1 %>
+          <p> My comments: </p>
+        <% else %>
+          <p> My comment: </p>
+        <% end %>
         <ul>
           <% pin.comments.where(user_id: @user.id).each do |comment| %>
             <li><%= comment.content %> </li>
