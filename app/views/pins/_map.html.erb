@@ -37,6 +37,9 @@
 <!-- <div id="map-placeholder"> -->
 <script>
 
+// Used in new_pin.js
+var addGemPopup;
+
 var pins = <%== @pins.to_json %>;//nifty way to get Ruby info as json
 
 mapboxgl.accessToken = "<%== ENV['MAPBOX_API_KEY'] %>";
@@ -152,9 +155,15 @@ map.on('load', function(){
         var popup = new mapboxgl.Popup({offset:popupOffsets})
           .setLngLat(event.lngLat)
           .setHTML('<a id="new-gem-button" href="'+link+'">Add Gem</a>')
-      .addTo(map);
+          .addTo(map);
+
+          addGemPopup = popup;
+
           return;
       }
+
+// needs to happen somewhere
+// popup.remove();
 
      var feature = features[0];
      // Populate the popup and set its coordinates

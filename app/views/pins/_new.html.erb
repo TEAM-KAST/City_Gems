@@ -1,5 +1,7 @@
 <section class="popup-new-pin-form">
-  <%= form_for @pin, url: {action: "create", :controller=>"pins"}, remote: true do |f| %>
+  <%= form_for @pin, url: {action: "create", :controller=>"pins"} do |f| %>
+    <%= f.hidden_field :lat %>
+    <%= f.hidden_field :lng%>
     <div class="field">
       <%= f.label :name, 'What is this gem called?' %>
       <%= f.text_area :name %>
@@ -20,7 +22,7 @@
       <%= f.label :photo_url, 'Or submit a link to a public photo of this gem' %>
       <%= f.text_field :photo_url %>
     </div>
-    <div class="actions">
+    <div class="submit-actions">
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.submit 'Save' %>
     </div>
