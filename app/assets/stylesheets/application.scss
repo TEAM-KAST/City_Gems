@@ -63,10 +63,8 @@ input.photo-submit {
 }
 
 .popup-new-pin-form {
-
   z-index: 2;
   position: fixed;
-
   background-color: #33D7FF;
   top: 15%;
   left: 15%;
@@ -143,6 +141,10 @@ a.navbar-brand {
   display: inline-flex;
   border: 2px solid blue;
   margin-right: .5em;
+}
+#current-user {
+  display: inline-flex;
+  border: 2px solid blue;
 }
 
 #pin_form {
