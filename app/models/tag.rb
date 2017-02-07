@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
-  has_many :pin_tags
+  has_many :pintags
 
   TAGS = %w(Natural Historical Artistic Quirky Cultural Beautiful)
 

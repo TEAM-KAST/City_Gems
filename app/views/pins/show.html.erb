@@ -17,10 +17,11 @@
 <div id="tags-container">
   <% if @pin.pin_tags %>
     <p>People say this gem is:</p>
+
     <p><%=Pin.tags(@pin)%></p>
   <% end %>
 
-  <%= render partial: 'pintags/form', locals: {pin: @pin, pintag: PinTag.new} %>
+  <%= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
 
 </div>
 

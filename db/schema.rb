@@ -23,13 +23,6 @@ ActiveRecord::Schema.define(version: 20170205211646) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pin_tag_votes", force: :cascade do |t|
-    t.integer  "pin_tag_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pin_tags", force: :cascade do |t|
     t.integer  "pin_id"
     t.integer  "tag_id"
@@ -47,6 +40,13 @@ ActiveRecord::Schema.define(version: 20170205211646) do
     t.decimal  "lat",        precision: 10, scale: 6
     t.decimal  "lng",        precision: 10, scale: 6
     t.string   "name"
+  end
+
+  create_table "pintags", force: :cascade do |t|
+    t.integer  "pin_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|

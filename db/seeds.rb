@@ -1,3 +1,4 @@
+
 # require 'faker'
 #
 # Pin.delete_all
@@ -30,3 +31,4 @@
 # }
 #
 # 30.times {PinTag.create(tag_id: Random.rand(6), pin_id: Random.rand(8))}
+
