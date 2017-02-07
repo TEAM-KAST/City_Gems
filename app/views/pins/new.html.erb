@@ -1,6 +1,4 @@
-<h1>New Gem</h1>
-
-<div class="form-container">
-  <%= render 'form', pin: @pin %>
+<div class="pop-form-container">
+  <h1>New Gem</h1>
+  <%= render partial: 'new', locals: {pin: @pin}, layout: false %>
 </div>
-

@@ -62,6 +62,19 @@ input.photo-submit {
   border-radius: 10px;
 }
 
+.popup-new-pin-form {
+  position: fixed;
+  background-color: #33D7FF;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px gold;
+}
+
+
 a.navbar-brand {
   font-size: 2vh;
   padding: 1.5em;

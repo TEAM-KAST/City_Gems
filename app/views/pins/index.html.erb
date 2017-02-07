@@ -3,21 +3,9 @@
 <!-- user login partial will go here with conditional logic -->
 <%= render partial: "pins/map" %>
 
-<div>
-  <p>Gems</p>
-  <ul>
-  <% @pins.each do |pin| %>
-    <li><a href="/pins/<%= pin.id %>">
-      <%= pin.appeal %>
-    </a></li>
-  <% end %>
-  </ul>
-</div>
 
-
-<%= link_to 'Add a Gem!', new_pin_path, id: 'new-gem-link' %>
+<%#= link_to 'Add a Gem!', new_pin_path, id: 'new-gem-link' %>
 
 <%= render 'search_form' %>
 
-<%= render 'pindex_sort' %>
-
+<%#= render 'pindex_sort' %>
