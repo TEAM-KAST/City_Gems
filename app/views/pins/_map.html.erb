@@ -162,7 +162,7 @@ map.on('load', function(){
       var link = '/pins/'+feature.properties.pinId;
       var popup = new mapboxgl.Popup()
           .setLngLat(feature.geometry.coordinates)
-          .setHTML('<a href="'+link+'">'+feature.properties.appeal+'</a>')
+          .setHTML('<a align="center" href="'+link+'">'+feature.properties.name+'</a><p>'+feature.properties.appeal+'</p>')
           .addTo(map);
   });
 
