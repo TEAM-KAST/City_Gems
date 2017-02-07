@@ -63,7 +63,7 @@ input.photo-submit {
 }
 
 .popup-new-pin-form {
-  position: fixed;
+  z-index: 2; position: fixed;
   background-color: #33D7FF;
   top: 15%;
   left: 15%;
