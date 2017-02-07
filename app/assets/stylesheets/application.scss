@@ -142,6 +142,10 @@ a.navbar-brand {
   border: 2px solid blue;
   margin-right: .5em;
 }
+#current-user {
+  display: inline-flex;
+  border: 2px solid blue;
+}
 
 #pin_form {
   max-width: 90%;

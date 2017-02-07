@@ -1,9 +1,13 @@
 
 <div id="footer-icons">
 <ul id="footer-icon-list">
+  <li id="current-user">
+  <% if current_user %>
+  <%= link_to current_user.first_name, users_path, id: "current-user"%>
+  <% end %>
+  </li>
   <li id="login-icon"><a href="/">
     <% if current_user %>
-      <%= link_to current_user.first_name, users_path, id: "current-user"%>
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
     <% else %>
     <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign-icon" %>
