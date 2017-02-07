@@ -16,6 +16,12 @@ $(document).ready(function() {
       });
     });
 
+    $('body').on('click', '#new_user_cancel', function(event) {
+      event.preventDefault();
+      $('.popup-login-form').remove();
+      $('.popup-registration-form').remove();
+    });
+
 
 // We don't really need this
     $('body').on("submit", "#new_pin", function(event) {
