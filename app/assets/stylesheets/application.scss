@@ -50,18 +50,6 @@ input.photo-submit {
   text-align: center;
 }
 
-#map-placeholder {
-  height: 500px;
-  width: 98%;
-  display: block;
-  margin: auto;
-  border: 2px solid lightgray;
-  background-color: rgba(159,159,159,.7);
-  margin-top: .5em;
-  margin-bottom: .5em;
-  border-radius: 10px;
-}
-
 .popup-new-pin-form {
   z-index: 2;
   position: fixed;
@@ -111,15 +99,7 @@ a.navbar-brand {
   text-indent: none;
 }
 
-#footer-icons {
-  border-top: 2px solid grey;
-  position:fixed;
-  left:0px;
-  bottom:0px;
-  height: 5%;
-  width:100%;
-  background: lightgrey;
-}
+
 
 .form-container {
   text-align: center;
@@ -138,7 +118,21 @@ a.navbar-brand {
 
 }
 
+#map-placeholder {
+  width: 90%;
+  height: 700px;
+  display: block;
+  margin: auto;
+  border: 2px solid grey;
+  background-color: rgba(159,159,159,.7);
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border-radius: 10px;
+}
+
+
 .mapboxgl-canvas {
+  padding: 5px;
   border-radius: 17px;
 }
 
@@ -150,17 +144,33 @@ a.navbar-brand {
   display: inline;
 }
 
-
 #login-icon {
   margin-left: .5em;
   display: inline-flex;
   border: 2px solid blue;
 }
-#filter-icon {
-  margin: auto;
-  display: inline-flex;
-  border: 2px solid blue;
+
+.icon {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  right: 50%;
+  border: 1px solid grey;
+  border-radius: 100%;
+  background-color: rgba(159,159,159,.7);
+  list-style:none;
+  margin: 0;
+  padding-left:0;
 }
+
+#filter-icon {
+position: fixed;
+  bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 100%;
+  background-color: rgba(159,159,159,.7);
+ }
+
 #menu-icon {
   float: right;
   display: inline-flex;
