@@ -4,7 +4,7 @@ class PinsController < ApplicationController
 
   def index
     @q = Pin.ransack(params[:q])
-    @pins = Pin.all
+    @pins = @q.result(distinct: @true)
   end
 
   def show
