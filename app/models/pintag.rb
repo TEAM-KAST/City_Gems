@@ -1,4 +1,4 @@
-class PinTag < ApplicationRecord
+class Pintag < ApplicationRecord
   belongs_to :pin
   belongs_to :tag
 

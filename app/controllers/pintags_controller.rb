@@ -1,8 +1,8 @@
-class PinTagsController < ApplicationController
+class PintagsController < ApplicationController
 
   def new
     if current_user
-      @pintag = PinTag.new
+      @pintag = Pintag.new
     else
       redirect_to @pin, notice: 'You have to be logged in to add tags'
     end
@@ -10,7 +10,7 @@ class PinTagsController < ApplicationController
 
   def create
     if current_user
-      @pintag = PinTag.create(pintag_params)
+      @pintag = Pintag.create(pintag_params)
     respond_to do |format|
         if @pintag.save
           format.html { redirect_to "/pins/#{@pintag.pin_id}", notice: 'tag added.' }

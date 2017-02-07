@@ -2,7 +2,7 @@
 <em>What do you want to experience in your city today?</em>
 
 <%= search_form_for @q do |f| %>
-  <%= f.collection_select(:pin_tags_id_eq, Tag.all, :id, :label, prompt: 'tags') %>
+  <%= f.collection_select(:pintags_tag_id_eq, Tag.all, :id, :label, prompt: 'tags', include_blank: 'All') %>
   <%= f.label :name_cont, "Gem Name Contains" %>
   <%= f.search_field :name_cont, placeholder: "leave blank to show all gems" %>
   <%= f.label :appeal_cont, "Description Keyword" %>

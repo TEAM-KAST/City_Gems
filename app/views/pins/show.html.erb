@@ -2,10 +2,12 @@
 <div id="gem-show-container"
   <p id="notice"><%= notice %></p>
 
+<% if @pin.user %>
   <p>
     <strong>Creator:</strong>
     <%= @pin.user.first_name %>
   </p>
+<% end %>
 
   <p>
     <strong>Appeal:</strong>
@@ -22,12 +24,12 @@
   </p>
 
 <div id="tags-container">
-  <% if @pin.pin_tags %>
+  <% if @pin.pintags %>
     <h2 class="gem-show-subheader">People say this gem is:</h2>
     <p><%=Pin.tags(@pin)%></p>
   <% end %>
 
-  <%= render partial: 'pintags/form', locals: {pin: @pin, pintag: PinTag.new} %>
+  <%= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
 
 </div>
 
