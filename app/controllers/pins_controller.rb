@@ -1,5 +1,6 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_filter :check_for_cancel, :only => [:create, :update]
 
   def index
     @q = Pin.ransack(params[:q])
@@ -39,7 +40,7 @@ class PinsController < ApplicationController
           # format.js
           # format.json { render json: @pin, status: :created, location: @pin }
         else
-          format.html { render :new }
+          format.html { redirect_to root_path, notice: 'Gem was not able to be created.'}
         end
       end
     else
@@ -71,5 +72,11 @@ class PinsController < ApplicationController
 
     def pin_params
       params.require(:pin).permit(:user_id, :name, :appeal, :photo_url, :website, :lat, :lng)
+    end
+
+    def check_for_cancel
+      if params[:commit] == "Cancel"
+        redirect_to root_path
+      end
     end
 end

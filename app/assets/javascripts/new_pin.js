@@ -16,10 +16,10 @@ $(document).ready(function() {
       });
     });
 
-    $('body').on('click', '#new_user_cancel', function(event) {
+    $('body').on('click', '#new_pin_cancel', function(event) {
       event.preventDefault();
-      $('.popup-login-form').remove();
-      $('.popup-registration-form').remove();
+      var $form = $(this).closest('section.popup-new-pin-form');
+      $($form).remove();
     });
 
 
