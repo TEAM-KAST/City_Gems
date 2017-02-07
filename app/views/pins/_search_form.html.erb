@@ -1,5 +1,5 @@
 <h2>Explore</h2>
-<em>What do you want to experience in your city today?</em>
+<em>What do you want to experience today?</em>
 
 <%= search_form_for @q do |f| %>
   <%= f.collection_select(:pintags_tag_id_eq, Tag.all, :id, :label, prompt: 'tags', include_blank: 'All') %>
