@@ -22,7 +22,10 @@ class PinsController < ApplicationController
         format.js
       end
     else
-      redirect_to root_path, notice: 'You have to be logged it to do that!!'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'You have to be logged it to do that!!' }
+        format.js { redirect_to root_path, notice: 'You have to be logged it to do that!!' }
+      end
     end
   end
 
