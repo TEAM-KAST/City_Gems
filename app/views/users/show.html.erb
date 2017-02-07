@@ -19,7 +19,12 @@
     <% @commented.each do |pin| %>
       <li>
         <strong> <%= link_to pin.name, pin_path(pin) %></strong>
-        <p>Comment: <%= #pin.comment where user is commenter %></p>
+        <p> My comment(s): </p>
+        <ul>
+          <% pin.comments.where(user_id: @user.id).each do |comment| %>
+            <li><%= comment.content %> </li>
+          <% end %>
+        </ul>
       </li>
     <% end %>
   </ol>

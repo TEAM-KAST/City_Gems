@@ -2,7 +2,7 @@
 class User < ApplicationRecord
   has_many :pins
   has_many :comments
-  has_many :pin_tag_votes
+  has_many :commented_pins, -> { distinct }, through: :comments, source: :pin
 
   def self.update_or_create(auth)
       user = User.find_by(uid: auth[:uid]) || User.new
@@ -19,14 +19,5 @@ class User < ApplicationRecord
       user.save
       user
     end
-
-  # I would like to give the user a username since we cannot get that from Google
-  # def username
-  # end
-
-  # I would also like to give them the option to change it
-  # def username=(new_username)
-  #   username = new_username
-  # end
 
 end
