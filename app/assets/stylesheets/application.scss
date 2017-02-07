@@ -17,7 +17,7 @@
 
 // this color is arbitrary and can change. I just needed a color to see the container effects
 body {
-  background: rgb(255, 165, 0);
+  background: #33FF93;
 }
 
 h1 {
@@ -55,7 +55,7 @@ input.photo-submit {
   width: 98%;
   display: block;
   margin: auto;
-  border: 2px solid grey;
+  border: 2px solid lightgray;
   background-color: rgba(159,159,159,.7);
   margin-top: .5em;
   margin-bottom: .5em;
@@ -63,7 +63,10 @@ input.photo-submit {
 }
 
 .popup-new-pin-form {
+
+  z-index: 2;
   position: fixed;
+
   background-color: #33D7FF;
   top: 15%;
   left: 15%;
@@ -197,4 +200,12 @@ a.navbar-brand {
 #back-link {
   float: right;
   padding-right: 1em;
+}
+
+
+#gem-show-container {
+  margin-top: 50%;
+  border: solid 2px black;
+  margin: 2%;
+  font-size: 4em;
 }

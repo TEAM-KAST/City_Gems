@@ -1,7 +1,9 @@
-<h3 id="pintag-create-header">Tag this Gem</h3>
+<div class="pintag-form-container">
+  <p>Tag this Gem</p>
 
-<%= form_for :pintag, url: pin_tags_path, method: :post do |f| %>
-  <%= f.collection_select(:tag_id, Tag.all, :id, :label) %>
-  <%= f.hidden_field :pin_id, :value => pin.id %>
-  <%= f.submit 'Add Tag' %>
-<% end %>
+  <%= form_for :pintag, url: pin_tags_path, method: :post do |f| %>
+    <%= f.collection_select(:tag_id, Tag.all, :id, :label) %>
+    <%= f.hidden_field :pin_id, :value => pin.id %>
+    <%= f.submit 'Add Tag', class: 'btn btn-lg btn-info' %>
+  <% end %>
+</div>

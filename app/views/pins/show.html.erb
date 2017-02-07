@@ -1,31 +1,23 @@
+<p id="notice"><%= notice %></p>
 
-<div id="gem-show-container"
-  <p id="notice"><%= notice %></p>
-
-<% if @pin.user %>
-  <p>
-    <strong>Creator:</strong>
-    <%= @pin.user.first_name %>
-  </p>
-<% end %>
-
-  <p>
-    <strong>Appeal:</strong>
-    <%= @pin.appeal %>
-  </p>
+<div id="gem-show-container">
+  <p>Name: <%= @pin.name %></p>
+  <p>Appeal: <%= @pin.appeal %></p>
 
   <div class="gem-show-img">
     <img class="gem-img" src="<%= @pin.photo_url %>" width="500">
-  <div>
+  </div>
 
-  <p>
-    <strong>Website:</strong>
+  <p>Creator: <%= @pin.user.first_name %></p>
+
+  <p>Website:
     <a href="<%= @pin.website %>"><%= @pin.website %></a>
   </p>
 
 <div id="tags-container">
-  <% if @pin.pintags %>
-    <h2 class="gem-show-subheader">People say this gem is:</h2>
+  <% if @pin.pin_tags %>
+    <p>People say this gem is:</p>
+
     <p><%=Pin.tags(@pin)%></p>
   <% end %>
 
@@ -34,7 +26,7 @@
 </div>
 
   <% if @pin.comments %>
-  <h2 class="gem-show-subheader">Comments:</h2>
+  <p>Comments:</p>
     <% @pin.comments.each do |comment| %>
       <p>
         <b>Commenter:</b>
@@ -52,7 +44,7 @@
 <% end %>
 
   <div class="model-link-container" id="gem-show-link-container">
-
+    <%= link_to 'Add a Comment', new_pin_comment_path(@pin) %> |
     <%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
     <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
     <%= link_to 'Back', pins_path %>
