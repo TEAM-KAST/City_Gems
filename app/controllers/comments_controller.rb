@@ -10,10 +10,15 @@ class CommentsController < ApplicationController
   def new
     if current_user
       @comment = Comment.new
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js
+      end
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
   end
+  
 
   def edit
     if current_user
