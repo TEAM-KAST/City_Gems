@@ -75,6 +75,31 @@ input.photo-submit {
   box-shadow: 0px 0px 30px 5px gold;
 }
 
+#new_comment{
+  z-index: 2;
+  position: fixed;
+  background-color: #33D7FF;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px gold;
+}
+
+.edit_comment{
+  z-index: 2;
+  position: fixed;
+  background-color: #33D7FF;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px gold;
+}
 
 a.navbar-brand {
   font-size: 2vh;
