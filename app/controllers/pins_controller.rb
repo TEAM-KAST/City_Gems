@@ -35,7 +35,9 @@ class PinsController < ApplicationController
       @pin = Pin.new(pin_params)
       respond_to do |format|
         if @pin.save
-          format.html { redirect_to @pin, notice: 'Gem was successfully created.' }
+          format.html { redirect_to pins_path, notice: 'Gem was successfully created.' }
+          # format.js
+          # format.json { render json: @pin, status: :created, location: @pin }
         else
           format.html { render :new }
         end
