@@ -6,7 +6,6 @@ class PinsController < ApplicationController
     @pins = @q.result(distinct: @true)
       .includes(:pintags)
       .joins(:pintags)
-
   end
 
   def show
