@@ -123,8 +123,6 @@ a.navbar-brand {
   height: 700px;
   display: block;
   margin: auto;
-  border: 2px solid grey;
-  background-color: rgba(159,159,159,.7);
   margin-top: .5em;
   margin-bottom: .5em;
   border-radius: 10px;
@@ -166,6 +164,8 @@ a.navbar-brand {
 #filter-icon {
 position: fixed;
   bottom: 10px;
+  left: 50%;
+  margin-left: -20px;
   border: 1px solid grey;
   border-radius: 100%;
   background-color: rgba(159,159,159,.7);
