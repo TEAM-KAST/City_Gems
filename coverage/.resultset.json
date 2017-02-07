@@ -1,12 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/groovin-solo/City_Gems/app/helpers/application_helper.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/helpers/application_helper.rb": [
         1,
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/helpers/sessions_helper.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/helpers/sessions_helper.rb": [
         1,
         1,
         21,
@@ -26,7 +26,7 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/comments_controller.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/controllers/comments_controller.rb": [
         1,
         1,
         1,
@@ -95,19 +95,22 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/application_controller.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/pins_controller.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/controllers/pins_controller.rb": [
         1,
         1,
         null,
         1,
         0,
         0,
+        null,
+        null,
+        null,
         null,
         null,
         1,
@@ -172,7 +175,7 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/comment.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/models/comment.rb": [
         1,
         1,
         1,
@@ -181,12 +184,12 @@
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/application_record.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/models/pin.rb": [
         1,
         1,
         1,
@@ -199,13 +202,17 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        null,
         null,
         0,
         null,
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/pin_tag.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/models/pintag.rb": [
         1,
         1,
         1,
@@ -213,7 +220,7 @@
         1,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/tag.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/models/tag.rb": [
         1,
         1,
         null,
@@ -224,7 +231,7 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/models/user.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/models/user.rb": [
         null,
         1,
         1,
@@ -258,7 +265,7 @@
         null,
         null
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/pin_tags_controller.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/controllers/pintags_controller.rb": [
         0,
         0,
         0,
@@ -306,7 +313,7 @@
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/sessions_controller.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/controllers/sessions_controller.rb": [
         0,
         0,
         0,
@@ -320,7 +327,7 @@
         0,
         0
       ],
-      "/Users/apprentice/groovin-solo/City_Gems/app/controllers/tags_controller.rb": [
+      "/Users/willywhitaker/Documents/DBC_Phase3/City_Gems/app/controllers/tags_controller.rb": [
         0,
         0,
         0,
@@ -334,6 +341,6 @@
         0
       ]
     },
-    "timestamp": 1486412345
+    "timestamp": 1486442430
   }
 }

@@ -14,6 +14,6 @@ RSpec.describe Pin, type: :model do
   describe 'associations' do
     it { is_expected.to belong_to :user }
     it { is_expected.to have_many :comments }
-    it { is_expected.to have_many :pin_tags }
+    it { is_expected.to have_many :pintags }
   end
 end

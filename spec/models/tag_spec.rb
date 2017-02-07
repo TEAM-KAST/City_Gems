@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Tag, type: :model do
   let!(:tag) { create(:tag) }
   describe 'tag associations' do
-    it { is_expected.to have_many(:pin_tags)}
+    it { is_expected.to have_many(:pintags)}
   end
 
   describe 'validations' do
