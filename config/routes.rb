@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :pin_tags, only: [:new, :create]
   resources :pins do
     resources :comments, only: [:new, :create, :edit, :update, :show, :destroy]
-
   end
+  resource :users, only: :show
 
   root 'pins#index'
 
