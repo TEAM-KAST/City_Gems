@@ -1,7 +1,7 @@
 <h1><%= @user.first_name %>'s CityGems</h1>
 <h2>Gems I've created</h2>
 <% if @created.length > 0 %>
-  <ol>
+  <ol id="created-gems">
     <% @created.each do |pin| %>
       <li>
         <strong> <%= link_to pin.name, pin_path(pin) %></strong>
@@ -11,4 +11,18 @@
   </ol>
 <% else %>
   <p>It looks like you haven't created any pins yet!</p>
+<% end %>
+
+<h2>Gems I've commented on</h2>
+<% if @commented.length > 0 %>
+  <ol id="commented-gems">
+    <% @commented.each do |pin| %>
+      <li>
+        <strong> <%= link_to pin.name, pin_path(pin) %></strong>
+        <p>Comment: <%= #pin.comment where user is commenter %></p>
+      </li>
+    <% end %>
+  </ol>
+<% else %>
+  <p>It looks like you haven't commented on any pins yet!</p>
 <% end %>
