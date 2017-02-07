@@ -4,6 +4,7 @@
 //     var $target = $(event.target)
 //     var url = ($target.attr('href'))
 //     var $targetParent = ($target.parent())
+//     console.log(url)
 //
 //     $.ajax({
 //       url: url,

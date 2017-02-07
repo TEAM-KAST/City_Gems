@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<style>
+/*<style>
 
 #marker {
     background-image: url('https://www.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
@@ -32,7 +32,7 @@
 
 
 
-</style>
+</style>*/
 
 <!-- <div id="map-placeholder"> -->
 <script>
@@ -171,7 +171,7 @@ map.on('load', function(){
       var link = '/pins/'+feature.properties.pinId;
       var popup = new mapboxgl.Popup()
           .setLngLat(feature.geometry.coordinates)
-          .setHTML('<a href="'+link+'">'+feature.properties.appeal+'</a>')
+          .setHTML('<a align="center" href="'+link+'">'+feature.properties.name+'</a><p>'+feature.properties.appeal+'</p>')
           .addTo(map);
   });
 
