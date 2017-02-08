@@ -17,13 +17,19 @@
 
 // this color is arbitrary and can change. I just needed a color to see the container effects
 body {
-  background: #33FF93;
+  background: rgb(117, 207, 240);
 }
 
 h1 {
   text-align: center;
   padding: .1em;
   font-size: 2.5vh;
+}
+
+#notice {
+  margin: 0;
+  text-align: center;
+  text-color: rgba(159,159,159,0)
 }
 
 input.photo-submit {
@@ -50,22 +56,10 @@ input.photo-submit {
   text-align: center;
 }
 
-#map-placeholder {
-  height: 500px;
-  width: 98%;
-  display: block;
-  margin: auto;
-  border: 2px solid lightgray;
-  background-color: rgba(159,159,159,.7);
-  margin-top: .5em;
-  margin-bottom: .5em;
-  border-radius: 10px;
-}
-
 .popup-new-pin-form {
   z-index: 2;
   position: fixed;
-  background-color: #33D7FF;
+  background-color: rgba(55, 185, 233, .85);
   top: 15%;
   left: 15%;
   width: 70%;
@@ -111,15 +105,7 @@ a.navbar-brand {
   text-indent: none;
 }
 
-#footer-icons {
-  border-top: 2px solid grey;
-  position:fixed;
-  left:0px;
-  bottom:0px;
-  height: 5%;
-  width:100%;
-  background: lightgrey;
-}
+
 
 .form-container {
   text-align: center;
@@ -138,8 +124,20 @@ a.navbar-brand {
 
 }
 
+
+#map-placeholder {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  // margin-top: .5em;
+  // margin-bottom: .5em;
+  border-radius: 10px;
+}
+
+
 .mapboxgl-canvas {
-  border-radius: 17px;
+  width: 100%;
+  height: 100%;
 }
 
 #footer-icon-list {
@@ -150,17 +148,35 @@ a.navbar-brand {
   display: inline;
 }
 
-
 #login-icon {
   margin-left: .5em;
   display: inline-flex;
   border: 2px solid blue;
 }
-#filter-icon {
-  margin: auto;
-  display: inline-flex;
-  border: 2px solid blue;
+
+.icon {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  right: 50%;
+  border: 1px solid grey;
+  border-radius: 100%;
+  background-color: rgba(159,159,159,.7);
+  list-style:none;
+  margin: 0;
+  padding-left:0;
 }
+
+#filter-icon {
+position: fixed;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -20px;
+  border: 1px solid grey;
+  border-radius: 100%;
+  background-color: rgba(159,159,159,.7);
+ }
+
 #menu-icon {
   float: right;
   display: inline-flex;
@@ -186,6 +202,12 @@ a.navbar-brand {
 
 .field input, textarea {
   background-color: rgba(159,159,159,.7)
+}
+
+@media only screen and (max-width: 650px) {
+  #navbar-logo, .navbar-default {
+    display: none;
+ }
 }
 
 #navbar-logo {
