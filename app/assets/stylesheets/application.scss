@@ -17,13 +17,19 @@
 
 // this color is arbitrary and can change. I just needed a color to see the container effects
 body {
-  background: #33FF93;
+  background: rgb(117, 207, 240);
 }
 
 h1 {
   text-align: center;
   padding: .1em;
   font-size: 2.5vh;
+}
+
+#notice {
+  margin: 0;
+  text-align: center;
+  text-color: rgba(159,159,159,0)
 }
 
 input.photo-submit {
@@ -53,7 +59,7 @@ input.photo-submit {
 .popup-new-pin-form {
   z-index: 2;
   position: fixed;
-  background-color: #33D7FF;
+  background-color: rgba(55, 185, 233, .85);
   top: 15%;
   left: 15%;
   width: 70%;
@@ -118,20 +124,20 @@ a.navbar-brand {
 
 }
 
+
 #map-placeholder {
-  width: 90%;
-  height: 700px;
+  width: 100%;
+  height: 100vh;
   display: block;
-  margin: auto;
-  margin-top: .5em;
-  margin-bottom: .5em;
+  // margin-top: .5em;
+  // margin-bottom: .5em;
   border-radius: 10px;
 }
 
 
 .mapboxgl-canvas {
-  padding: 5px;
-  border-radius: 17px;
+  width: 100%;
+  height: 100%;
 }
 
 #footer-icon-list {
@@ -196,6 +202,12 @@ position: fixed;
 
 .field input, textarea {
   background-color: rgba(159,159,159,.7)
+}
+
+@media only screen and (max-width: 650px) {
+  #navbar-logo, .navbar-default {
+    display: none;
+ }
 }
 
 #navbar-logo {

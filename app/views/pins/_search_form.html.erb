@@ -3,7 +3,8 @@
   <em>What do you want to experience today?</em>
 
   <%= search_form_for @q do |f| %>
-    <%= f.collection_select(:pintags_tag_id_eq, Tag.all, :id, :label, prompt: 'tags', include_blank: 'All') %>
+    <%= f.label :pintag, 'something:' %>
+    <%= f.collection_select(:pintags_tag_id_eq, Tag.all, :id, :label, prompt: 'tags', include_blank: 'All') %><br>
     <%= f.label :name_cont, "Gem Name Contains" %>
     <%= f.search_field :name_cont, placeholder: "show all" %>
     <%= f.label :appeal_cont, "Description Keyword" %>
@@ -16,4 +17,4 @@
       <%= f.submit %>
     </div>
   <% end %>
- </div> 
+ </div>
