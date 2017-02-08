@@ -27,24 +27,23 @@ $(document).ready(function() {
       event.preventDefault();
       var $form = $(this);
       var data = $form.serialize();
-      console.log(data)
       $.ajax({
         type: 'post',
         url: '/pins',
-        data: data
-      }).done(function(response) {
-        console.log("RESPONSE", response)
-        // var $pintagForm = $(response).children('.pintag-form-container');
-        // debugger;
-        // var $section = $form.closest('section.popup-new-pin-form');
-        // $('.new-pin').append($pintagForm);
-      }).error(function(response) {
-        console.log("ERROR", response);
-      })
+        data: data,
+        dataType: 'html',
+        success: function(response) {
+          console.log("RESPONSE", response)
+          var $pintagForm = $(response);
+           $('#new_pin').append($pintagForm);
+        },
+        fail: function(response) {
+          console.log("fail", response);
+        },
+        error: function(response, jqXHR) {
+          console.log("ERROR", response);
+          console.log("xhr", jqXHR);
+        }
+      });
     });
-
   });
-
-
-    //
-  // $section.remove();
