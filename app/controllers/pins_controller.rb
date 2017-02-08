@@ -3,7 +3,7 @@ class PinsController < ApplicationController
   before_filter :check_for_cancel, :only => [:create, :update]
 
   def index
-    @q = Pin.ransack(params[:q])
+    @q = Pin.joins(:pintags, :tags).ransack(params[:q])
     @pins = @q.result(distinct: @true)
   end
 

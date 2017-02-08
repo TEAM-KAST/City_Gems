@@ -2,8 +2,13 @@
   <p>Tag this Gem</p>
 
   <%= form_for :pintag, url: pintags_path, method: :post do |f| %>
+<<<<<<< HEAD
     <%= f.collection_select(:tag_id, Tag.all, :id, :label) %>
     <%= f.hidden_field :pin_id, :value => @pin.id %>
+=======
+    <%= f.collection_select(:tag_id, Tag.all, :id, :label, {:prompt => 'Choose a category'}, {:required => true}) %>
+    <%= f.hidden_field :pin_id, :value => pin.id %>
+>>>>>>> master
     <%= f.submit 'Add Tag', class: 'btn btn-lg btn-info' %>
   <% end %>
 </div>
