@@ -18,7 +18,8 @@ class PintagsController < ApplicationController
       @pintag = Pintag.create(pintag_params)
     respond_to do |format|
         if @pintag.save
-          format.html { redirect_to "/pins/#{@pintag.pin_id}", notice: 'tag added.' }
+          format.html { redirect_to "/pins/#{@pintag.pin_id}", notice: 'Tag added.' }
+          format.js
         else
           format.html { render :new }
         end

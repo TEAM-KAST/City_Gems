@@ -5,6 +5,8 @@ class PinsController < ApplicationController
   def index
     @q = Pin.ransack(params[:q])
     @pins = @q.result(distinct: @true)
+    @pintag = Pintag.new
+    @pin = Pin.new
   end
 
   def show
@@ -17,7 +19,7 @@ class PinsController < ApplicationController
       @pin.lng = params[:longitude]
       respond_to do |format|
         format.html { render 'new' }
-        format.js 
+        format.js
       end
     else
       respond_to do |format|
@@ -29,7 +31,6 @@ class PinsController < ApplicationController
 
   def edit
     if current_user
-      p @pin
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
@@ -40,9 +41,8 @@ class PinsController < ApplicationController
       @pin = Pin.new(pin_params)
       respond_to do |format|
         if @pin.save
-          format.html { redirect_to pins_path, notice: 'Gem was successfully created.' }
-          # format.js
-          # format.json { render json: @pin, status: :created, location: @pin }
+          # format.html { redirect_to pins_path, notice: 'Gem was successfully created.' }
+          format.js { render 'pintags/_form'}
         else
           format.html { redirect_to root_path, notice: 'Gem was not able to be created.'}
         end
