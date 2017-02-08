@@ -26,6 +26,10 @@ h1 {
   font-size: 2.5vh;
 }
 
+.hidden {
+  display: none;
+}
+
 input.photo-submit {
    background-color: rgba(159,159,159,.7);
     border: none;
@@ -62,6 +66,7 @@ input.photo-submit {
   border-radius: 10px;
 }
 
+// refactor to add all popups together
 .popup-new-pin-form {
   z-index: 2;
   position: fixed;

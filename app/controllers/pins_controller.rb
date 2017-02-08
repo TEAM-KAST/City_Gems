@@ -29,6 +29,7 @@ class PinsController < ApplicationController
 
   def edit
     if current_user
+      p @pin
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end

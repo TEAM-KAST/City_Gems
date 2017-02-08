@@ -25,24 +25,30 @@ $(document).ready(function() {
 
 // We don't really need this
     $('body').on("submit", "#new_pin", function(event) {
-      // event.preventDefault();
-      // var $form = $(this);
-      // var data = $form.serialize();
-      // console.log(data)
-      // $.ajax({
-      //   type: 'post',
-      //   url: '/pins',
-      //   data: data
-      // }).done(function(response) {
-      //   console.log("DONE", $('.popup-new-pin-form'))
-      //   var $section = $form.closest('section.popup-new-pin-form');
-      //   $section.remove();
-      //
-      //
-      // }).error(function(response) {
-      //   console.log("ERROR", response);
-      // })
+      event.preventDefault();
+      var $form = $(this);
+      var data = $form.serialize();
+      console.log(data)
+      $.ajax({
+        type: 'post',
+        url: '/pins',
+        data: data
+      }).done(function(response) {
+        console.log("DONE", $('.popup-new-pin-form'))
+        var $section = $form.closest('section.popup-new-pin-form');
+        $.ajax({
+          url: 'pintags/new',
+          type: 'get'
+        }).done(function(data){
+          console.log("DONE", data);
+          // debugger;
+          var $pintagForm = $(data).children('.pintag-form-container');
+          $('.new-pin').append($pintagForm);
+        // $section.remove();
+      }).error(function(response) {
+        console.log("ERROR", response);
+      })
     });
 
-
+  });
   });

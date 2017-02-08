@@ -44,7 +44,7 @@
 <% end %>
 
   <div class="model-link-container" id="gem-show-link-container">
-    <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true %> |
+    <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
     <%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
     <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
     <%= link_to 'Back', pins_path %>

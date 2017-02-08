@@ -3,6 +3,11 @@ class PintagsController < ApplicationController
   def new
     if current_user
       @pintag = Pintag.new
+      @pin = Pin.last
+      respond_to do |format|
+        format.html { render :new }
+        format.js
+      end
     else
       redirect_to @pin, notice: 'You have to be logged in to add tags'
     end

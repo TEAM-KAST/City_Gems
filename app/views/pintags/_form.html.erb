@@ -3,7 +3,7 @@
 
   <%= form_for :pintag, url: pintags_path, method: :post do |f| %>
     <%= f.collection_select(:tag_id, Tag.all, :id, :label) %>
-    <%= f.hidden_field :pin_id, :value => pin.id %>
+    <%= f.hidden_field :pin_id, :value => @pin.id %>
     <%= f.submit 'Add Tag', class: 'btn btn-lg btn-info' %>
   <% end %>
 </div>

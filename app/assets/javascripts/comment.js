@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.model-link-container').on('click', function(event){
+  $('.new-comment-link').on('click', function(event){
     event.preventDefault();
     var $target = $(event.target)
     var url = ($target.attr('href'));
