@@ -26,6 +26,10 @@ h1 {
   font-size: 2.5vh;
 }
 
+.hidden {
+  display: none;
+}
+
 #notice {
   margin: 0;
   text-align: center;
@@ -55,6 +59,20 @@ input.photo-submit {
   width: 80%;
   text-align: center;
 }
+
+#map-placeholder {
+  height: 500px;
+  width: 98%;
+  display: block;
+  margin: auto;
+  border: 2px solid lightgray;
+  background-color: rgba(159,159,159,.7);
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border-radius: 10px;
+}
+
+// refactor to add all popups together
 
 .popup-new-pin-form {
   z-index: 2;
