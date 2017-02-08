@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#filter_icon').on('click', function(event){
+  $('#menu_icon').on('click', function(event){
     event.preventDefault();
     var $target = $(event.target)
     var url = ($target.attr('href'));
