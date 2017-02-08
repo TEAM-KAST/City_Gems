@@ -41,18 +41,19 @@ RSpec.describe PinsController, type: :controller do
     end
 
     describe "POST #create" do
-      context "with valid params" do
+      xcontext "with valid params" do
         it "creates a new Pin" do
           expect {post :create, params: {:id => pin.to_param, pin: valid_attributes} }.to change(Pin, :count).by(1)
         end
 
         it "assigns a newly created pin as @pin" do
           post :create, params: {:id => pin.to_param, pin: valid_attributes}
+          expect(response).to render_template('pintags/_form')
           expect(assigns(:pin)).to be_a(Pin)
           expect(assigns(:pin)).to be_persisted
         end
 
-        xit "redirects to the created pin" do
+        it "redirects to the created pin" do
           post :create, params: {:id => pin.to_param, pin: valid_attributes}
           expect(response).to redirect_to(pin_path(pin))
         end
@@ -64,7 +65,7 @@ RSpec.describe PinsController, type: :controller do
           expect(assigns(:pin)).to be_a_new(Pin)
         end
 
-        it "re-renders the 'new' template" do
+        xit "re-renders the 'new' template" do
           post :create, params: {:id => pin.to_param, pin: invalid_attributes}
           expect(response).to render_template("new")
         end
