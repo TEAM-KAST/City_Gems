@@ -31,10 +31,15 @@
     </div>
 
 
-    <div class="field" id="photo_upload">
-      <%= f.label :photo_url, 'Take or Upload a Picture' %>
-      <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera">
-    </div>
+    <div class="field">
+    <%= f.label :image, 'Upload an image', capture: 'camera' %><br>
+    <%= f.file_field :image %>
+    <% if f.object.image? %>
+      <%= image_tag f.object.image.thumb.url %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %>
+    <% end %>
+  </div>
 
     <div class="field">
       <%= f.label :photo_url, 'Or submit a link to a public photo of this gem' %>
