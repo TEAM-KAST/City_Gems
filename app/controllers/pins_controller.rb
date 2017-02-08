@@ -9,6 +9,9 @@ class PinsController < ApplicationController
     @pin = Pin.new
   end
 
+  def about
+  end
+
   def show
   end
 
