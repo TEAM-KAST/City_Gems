@@ -28,6 +28,8 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faker', '~> 1.7.2'
 gem 'ransack'
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

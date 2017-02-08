@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170208185907) do
 
   # These are extensions that must be enabled in order to support this database
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 20170208185907) do
     t.decimal  "lat",        precision: 10, scale: 6
     t.decimal  "lng",        precision: 10, scale: 6
     t.string   "name"
+    t.string   "image"
   end
 
   create_table "pintags", force: :cascade do |t|
