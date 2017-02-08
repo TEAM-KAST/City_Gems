@@ -34,10 +34,11 @@ $(document).ready(function() {
         url: '/pins',
         data: data
       }).done(function(response) {
-        // console.log("RESPONSE", response)
-          var $pintagForm = $(response).children('.pintag-form-container');
+        console.log("RESPONSE", response)
+        var $pintagForm = $(response).children('.pintag-form-container');
+        debugger;
         // var $section = $form.closest('section.popup-new-pin-form');
-        $('.new-pin').append($pintagForm);
+        // $('.new-pin').append($pintagForm);
       }).error(function(response) {
         console.log("ERROR", response);
       })
