@@ -9,7 +9,6 @@
   </div>
 
   <p>Creator: <%= @pin.user.first_name %></p>
-
   <p>Website:
     <a href="<%= @pin.website %>"><%= @pin.website %></a>
   </p>
@@ -17,12 +16,9 @@
 <div id="tags-container">
   <% if @pin.pintags %>
     <p>People say this gem is:</p>
-
     <p><%=Pin.tags(@pin)%></p>
   <% end %>
-
-  <%= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
-
+  <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
 </div>
 
   <% if @pin.comments %>
