@@ -3,7 +3,7 @@ class PinsController < ApplicationController
   before_filter :check_for_cancel, :only => [:create, :update]
 
   def index
-    @q = Pin.joins(:pintags, :tags).ransack(params[:q])
+    @q = Pin.ransack(params[:q])
     @pins = @q.result(distinct: @true)
   end
 
@@ -17,7 +17,7 @@ class PinsController < ApplicationController
       @pin.lng = params[:longitude]
       respond_to do |format|
         format.html { render 'new' }
-        format.js { render html: 'pintags/_form', layout: false}
+        format.js 
       end
     else
       respond_to do |format|

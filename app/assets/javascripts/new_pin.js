@@ -23,7 +23,6 @@ $(document).ready(function() {
     });
 
 
-// We don't really need this
     $('body').on("submit", "#new_pin", function(event) {
       event.preventDefault();
       var $form = $(this);
@@ -35,8 +34,8 @@ $(document).ready(function() {
         data: data
       }).done(function(response) {
         console.log("RESPONSE", response)
-        var $pintagForm = $(response).children('.pintag-form-container');
-        debugger;
+        // var $pintagForm = $(response).children('.pintag-form-container');
+        // debugger;
         // var $section = $form.closest('section.popup-new-pin-form');
         // $('.new-pin').append($pintagForm);
       }).error(function(response) {
@@ -44,12 +43,8 @@ $(document).ready(function() {
       })
     });
 
-
   });
 
-
-
-    // debugger;
 
     //
   // $section.remove();
