@@ -17,7 +17,7 @@ class PinsController < ApplicationController
       @pin.lng = params[:longitude]
       respond_to do |format|
         format.html { render 'new' }
-        format.js
+        format.js { render '_form', layout: false}
       end
     else
       respond_to do |format|

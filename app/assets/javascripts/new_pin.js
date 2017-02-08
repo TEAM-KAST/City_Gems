@@ -34,21 +34,21 @@ $(document).ready(function() {
         url: '/pins',
         data: data
       }).done(function(response) {
-        console.log("DONE", $('.popup-new-pin-form'))
-        var $section = $form.closest('section.popup-new-pin-form');
-        $.ajax({
-          url: 'pintags/new',
-          type: 'get'
-        }).done(function(data){
-          console.log("DONE", data);
-          // debugger;
-          var $pintagForm = $(data).children('.pintag-form-container');
-          $('.new-pin').append($pintagForm);
-        // $section.remove();
+        // console.log("RESPONSE", response)
+          var $pintagForm = $(response).children('.pintag-form-container');
+        // var $section = $form.closest('section.popup-new-pin-form');
+        $('.new-pin').append($pintagForm);
       }).error(function(response) {
         console.log("ERROR", response);
       })
     });
 
+
   });
-  });
+
+
+
+    // debugger;
+
+    //
+  // $section.remove();
