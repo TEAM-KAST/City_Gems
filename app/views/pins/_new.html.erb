@@ -15,9 +15,12 @@
       <%= f.text_field :website %>
     </div>
     <div class="field" id="photo_upload">
-      <%= f.label :photo_url, 'Take or Upload a Picture' %>
-      <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera">
+      <%= f.label :image, 'Take or Upload a Picture' %>
+    <div class="field">
+      <%= f.label :image %><br>
+      <%= f.file_field :image, capture: 'camera' %>
     </div>
+      <!-- <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera"> -->
     <div class="field">
       <%= f.label :photo_url, 'Or submit a link to a public photo of this gem' %>
       <%= f.text_field :photo_url %>

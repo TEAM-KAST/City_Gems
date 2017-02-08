@@ -1,4 +1,6 @@
+
 class Pin < ApplicationRecord
+  mount_uploader :image, ImageUploader
   belongs_to :user
   has_many :comments
   has_many :pintags
@@ -7,7 +9,9 @@ class Pin < ApplicationRecord
   validates_presence_of :user_id, :lat, :lng, :appeal, :name
   validates_numericality_of :user_id, :lat, :lng
 
-  def self.tags(pin)
+  mount_uploader :image, ImageUploader
+
+  def self.tags_to_s(pin)
   	return "" if !pin.pintags
     tag_names = ""
   	pin.pintags.each do |pt|

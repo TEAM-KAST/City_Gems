@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <div id="gem-show-container">
+
+  <% if @pin.image %>
+    <p>
+      <%= image_tag @pin.image.thumb.url %>
+    </p>
+  <% end %>
+
   <p>Name: <%= @pin.name %></p>
   <p>Appeal: <%= @pin.appeal %></p>
 
