@@ -6,7 +6,7 @@ $(document).ready(function() {
         url: url,
         type: 'get'
       }).done(function(data){
-        var $popupForm = $(data).children('section');
+        var $popupForm = $(data).children().children('section');
         $('body').append($popupForm);
         // Global Variable from _map.html
         if(addGemPopup){
