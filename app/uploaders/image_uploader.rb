@@ -46,7 +46,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :cover do
-    process :resize_to_fit => [700, 700]
+    process :resize_to_fit => [3000, 3000]
     process :store_dimensions
   end
 
