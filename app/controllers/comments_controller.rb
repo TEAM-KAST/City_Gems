@@ -49,7 +49,10 @@ class CommentsController < ApplicationController
   def destroy
     if current_user
       @comment.destroy
-      redirect_to pin_path(@pin), notice: 'Comment was successfully destroyed.'
+      respond_to do |format|
+        # format.html {redirect_to pin_path(@pin), notice: 'Comment was successfully destroyed.'}
+        format.js {render nothing: true}
+      end
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
