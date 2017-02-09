@@ -18,7 +18,7 @@ RSpec.describe Pin, type: :model do
   end
 
   describe 'class method' do
-    it "changes the tag object's to a string"
+    it "changes the tag object's to a string" do
     end
   end
 end
