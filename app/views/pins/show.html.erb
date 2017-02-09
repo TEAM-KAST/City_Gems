@@ -4,7 +4,9 @@
   <style>
     .cover-photo {
       /* The image used */
-      background-image: url("<%= @pin.image.cover %>");
+      background-image: url("<%= @pin.image %>");
+      background-size: 2000px;
+      background-position: center 100px;
     }
   </style>
 
@@ -18,12 +20,15 @@
 
 <% else %>
   <p class="in-cover">Name: <%= @pin.name %></p>
+  <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
 <% end %>
 
- <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
+<% if current_user = @pin.user %>
+  <%= link_to 'Edit this Gem Profile & Upload a Photo', edit_pin_path(@pin), class: 'edit-link' %>
+<% end %>
 
 <div id="gem-show-container" >
-  <p>Creator: <%= @pin.user.first_name %></p>
+  <p>Added by: <%= "#{@pin.user.first_name} #{@pin.user.last_name}" %></p>
   <p>Website:
     <a href="<%= @pin.website %>"><%= @pin.website %></a>
   </p>
@@ -33,6 +38,10 @@
       <p><%=Pin.tags_to_s(@pin)%></p>
     <% end %>
     <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
+  </div>
+
+  <div id='image-container'>
+    <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
   </div>
 
   <% if @pin.comments %>
@@ -51,11 +60,10 @@
       <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment) %> |
       <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
     <% end %>
-<% end %>
+  <% end %>
 
   <div class="model-link-container" id="gem-show-link-container">
     <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
-    <%= link_to 'Edit This Gem', edit_pin_path(@pin) %> |
     <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
     <%= link_to 'Back', pins_path %>
   </div>
