@@ -16,4 +16,9 @@ RSpec.describe Pin, type: :model do
     it { is_expected.to have_many :comments }
     it { is_expected.to have_many :pintags }
   end
+
+  describe 'class method' do
+    it "changes the tag object's to a string"
+    end
+  end
 end
