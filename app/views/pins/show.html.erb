@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<div id="gem-show-container">
-  <p>Name: <%= @pin.name %></p>
-  <p>Appeal: <%= @pin.appeal %></p>
+
+<div id="gem-show-page">
+<!-- changed from 'gem-show-container' to 'gem-show-page' due to duplicate div id -->
 
 <% if @pin.image %>
   <style>
@@ -13,6 +13,7 @@
       background-position: center 100px;
     }
   </style>
+
 
 
   <div class='cover-photo'>
@@ -39,9 +40,9 @@
   </p>
   <% end %>
   <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
-</div>
-<div id="comments-container">
+
   <% if @pin.comments %>
+
   <div id="tags-container">
     <% if @pin.pintags %>
       <p>People say this gem is:</p>
@@ -54,9 +55,16 @@
     <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
   </div>
 
+<div id="comments-container">
+
+  <!-- Moving tags-container out of comments-container -->
+    <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
+ <!-- Moving image-container out of comments-container -->
+
+
   <% unless @pin.comments.blank?%>
   <p>Comments:</p>
-    <% @pin.comments.each do |comment| %>
+    <% @pin.comments.reverse_each do |comment| %>
     <div id="comment-start">
       <p>
         <b>Commenter:</b>
@@ -66,24 +74,27 @@
       <div id='comment-field'>
       <p>
         <b>Comment:</b>
-          <span  id="comment-<%= comment.id %>">
+          <span id="comment-<%= comment.id %>">
         <%= comment.content %>
       </span>
       </p>
     </div>
     <div id='comment-link-field'>
-      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment) %> |
-      <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
+      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment), id: 'edit'%> |
+      <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE", id: 'delete', remote: true %>
     </div>
   </div>
 
+
     <% end %>
   <% end %>
+<% end %>
 
   <div class="model-link-container" id="gem-show-link-container">
     <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
     <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
     <%= link_to 'Back', pins_path %>
+  </div>
   </div>
 </div>
 </div>
