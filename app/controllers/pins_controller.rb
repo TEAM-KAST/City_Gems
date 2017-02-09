@@ -1,5 +1,7 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  # before creating/updating a new pin, the controller will check for a 'cancel' before submitting
+  # if there is a cancel, no changes are made to the pin
   before_filter :check_for_cancel, :only => [:create, :update]
 
   def index
@@ -44,10 +46,9 @@ class PinsController < ApplicationController
       @pin = Pin.new(pin_params)
       respond_to do |format|
         if @pin.save
-          # format.html { redirect_to pins_path, notice: 'Gem was successfully created.' }
           format.js { render 'pintags/_form'}
         else
-          format.html { redirect_to root_path, notice: 'Gem was not able to be created.'}
+          format.html { redirect_to root_path, notice: 'Gem was not able to be created!'}
         end
       end
     else
@@ -58,7 +59,7 @@ class PinsController < ApplicationController
   def update
     respond_to do |format|
       if @pin.update(pin_params)
-        format.html { redirect_to @pin, notice: 'Gem was successfully updated.' }
+        format.html { redirect_to @pin, notice: 'Gem was successfully updated!' }
       else
         format.html { render :edit }
       end
@@ -68,7 +69,7 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     respond_to do |format|
-      format.html { redirect_to pins_url, notice: 'Gem was successfully destroyed.' }
+      format.html { redirect_to pins_url, notice: 'Gem was successfully deleted!' }
     end
   end
 

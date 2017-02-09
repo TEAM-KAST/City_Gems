@@ -9,7 +9,7 @@ class PintagsController < ApplicationController
         format.js
       end
     else
-      redirect_to @pin, notice: 'You have to be logged in to add tags'
+      redirect_to @pin, notice: 'You have to be logged in to add tags!!'
     end
   end
 
@@ -18,14 +18,14 @@ class PintagsController < ApplicationController
       @pintag = Pintag.create(pintag_params)
     respond_to do |format|
         if @pintag.save
-          format.html { redirect_to "/pins/#{@pintag.pin_id}", notice: 'Tag added.' }
+          format.html { redirect_to "/pins/#{@pintag.pin_id}", notice: 'A new gem was created!' }
           format.js
         else
           format.html { render :new }
         end
       end
     else
-      redirect_to @pin, notice: 'You have to be logged it to tag this'
+      redirect_to @pin, notice: 'You have to be logged it to tag that!!'
     end
 
   end
