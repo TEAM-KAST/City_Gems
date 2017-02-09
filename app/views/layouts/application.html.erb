@@ -20,7 +20,10 @@
   <body>
 
     <%= render partial: "layouts/navbar" %>
-    <%= yield %>
+    <div id="load"></div>
+    <div id="page-contents">
+      <%= yield %>
+    </div>
     <%= render partial: 'layouts/footer-icons' %>
 
   </body>
