@@ -43,7 +43,7 @@ $(document).ready(function() {
       data: data,
       dataType: 'html'
     }).done(function(response){
-      var $commentToPost = $(response).children('#comments-container').children('#comment-start:last')
+      var $commentToPost = $(response).children('#gem-show-container').children('#comments-container').children('#comment-start:first')
       $('#comments-container').prepend($commentToPost)
       $target.remove();
 
