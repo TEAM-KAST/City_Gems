@@ -10,15 +10,10 @@ class CommentsController < ApplicationController
   def new
     if current_user
       @comment = Comment.new
-      respond_to do |format|
-        format.html { render 'new' }
-        format.js
-      end
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end
   end
-  
 
   def edit
     if current_user
@@ -31,6 +26,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     respond_to do |format|
       if @comment.save
+        format.js {render json: @comment.to_json}
         format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully created.' }
       else
         format.html { render :new }
@@ -39,9 +35,11 @@ class CommentsController < ApplicationController
   end
 
   def update
+    p params
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully updated.' }
+        format.js {render json: @comment.to_json}
+        # format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully updated.' }
       else
         format.html { render :edit }
       end

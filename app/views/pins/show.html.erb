@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+
+
+
 <div id="gem-show-container">
   <p>Name: <%= @pin.name %></p>
   <p>Appeal: <%= @pin.appeal %></p>
@@ -26,16 +29,22 @@
     <% @pin.comments.each do |comment| %>
       <p>
         <b>Commenter:</b>
-        <%= comment.user.first_name %>
-      </p>
 
+        <%= comment.user.first_name %>
+      </span>
+      </p>
+      <div id='comment-field'>
       <p>
         <b>Comment:</b>
+          <span  id='comment-content'>
         <%= comment.content %>
+      </span>
       </p>
-
+    </div>
+    <div id='comment-link-field'>
       <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment) %> |
       <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
+    </div>
     <% end %>
 <% end %>
 
