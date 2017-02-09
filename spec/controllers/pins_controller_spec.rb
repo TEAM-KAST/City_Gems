@@ -41,20 +41,22 @@ RSpec.describe PinsController, type: :controller do
     end
 
     describe "POST #create" do
-      xcontext "with valid params" do
-        it "creates a new Pin" do
-          expect {post :create, params: {:id => pin.to_param, pin: valid_attributes} }.to change(Pin, :count).by(1)
+      context "with valid params" do
+        it "renders the pintag form partial" do
+          post :create, params: {:id => pin.to_param, pin: valid_attributes }, xhr: true
+          expect(response).to render_template(:partial => "_form")
         end
 
+
         it "assigns a newly created pin as @pin" do
-          post :create, params: {:id => pin.to_param, pin: valid_attributes}
+          post :create, params: {:id => pin.to_param, pin: valid_attributes}, xhr: true
           expect(response).to render_template('pintags/_form')
           expect(assigns(:pin)).to be_a(Pin)
           expect(assigns(:pin)).to be_persisted
         end
 
         it "redirects to the created pin" do
-          post :create, params: {:id => pin.to_param, pin: valid_attributes}
+          post :create, params: {:id => pin.to_param, pin: valid_attributes}, xhr: true
           expect(response).to redirect_to(pin_path(pin))
         end
       end
@@ -65,7 +67,7 @@ RSpec.describe PinsController, type: :controller do
           expect(assigns(:pin)).to be_a_new(Pin)
         end
 
-        xit "re-renders the 'new' template" do
+        it "re-renders the 'new' template" do
           post :create, params: {:id => pin.to_param, pin: invalid_attributes}
           expect(response).to render_template("new")
         end
@@ -74,12 +76,12 @@ RSpec.describe PinsController, type: :controller do
 
     describe "PUT #update" do
       context "with valid params" do
-        xit "updates the requested pin" do
-          pin = Pin.create! valid_attributes
-          put :update, params: {id: pin.to_param, pin: valid_attributes}
-          pin.reload
-          skip("Add assertions for updated state")
-        end
+        # xit "updates the requested pin" do
+        #   pin = Pin.create! valid_attributes
+        #   put :update, params: {id: pin.to_param, pin: valid_attributes}
+        #   pin.reload
+        #   skip("Add assertions for updated state")
+        # end
 
         it "assigns the requested pin as @pin" do
           pin = Pin.create! valid_attributes
@@ -100,10 +102,10 @@ RSpec.describe PinsController, type: :controller do
         end
 
         # I don't understand why this test is not passing
-        xit "re-renders the 'edit' template" do
-          put :update, params: {id: pin.to_param, pin: invalid_attributes}
-          expect(response).to render_template(edit_pin_pin_path(pin))
-        end
+        # xit "re-renders the 'edit' template" do
+        #   put :update, params: {id: pin.to_param, pin: invalid_attributes}
+        #   expect(response).to render_template(edit_pin_pin_path(pin))
+        # end
       end
     end
 
