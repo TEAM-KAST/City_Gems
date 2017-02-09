@@ -223,7 +223,13 @@ a.navbar-brand {
 
 .edit-link {
   margin: auto;
-}
+  padding-top: 5px;
+  font-size: 18pt;
+  display: block;
+  text-align: center;
+  padding-left: 2em;
+  padding-top: 5px;
+
 
 #gem-image {
    border: 2px solid grey;
@@ -231,14 +237,17 @@ a.navbar-brand {
 }
 
 #gem-show-container {
+  font-size: 3vh;
+  height:auto;
   font-size: 24pt;
-  // height: 1000px;
+  min-height: 100vh;
   padding-bottom: 3em;
   padding-left: 2%;
   padding-right: 2%;
   padding-top: 5%;
   border-radius: 30px;
   background: linear-gradient(to right, rgba(29, 190, 183,.6), rgba(55, 185, 233,.6));
+
 }
 
 #gem-show-link-container {
