@@ -23,20 +23,20 @@
   <% end %>
   <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
 </div>
-
+<div id="comments-container">
   <% if @pin.comments %>
   <p>Comments:</p>
     <% @pin.comments.each do |comment| %>
+    <div id="comment-start">
       <p>
         <b>Commenter:</b>
-
         <%= comment.user.first_name %>
-      </span>
+
       </p>
       <div id='comment-field'>
       <p>
         <b>Comment:</b>
-          <span  id='comment-content'>
+          <span  id="comment-<%= comment.id %>">
         <%= comment.content %>
       </span>
       </p>
@@ -45,6 +45,8 @@
       <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment) %> |
       <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
     </div>
+  </div>
+
     <% end %>
 <% end %>
 
@@ -54,4 +56,5 @@
     <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
     <%= link_to 'Back', pins_path %>
   </div>
+</div>
 </div>
