@@ -10,10 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
+*= require_self
+*= require_tree .
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// #load {
+//     width:100%;
+//     height:100%;
+//     position:fixed;
+//     z-index:9999;
+//     background:url("/assets/gps.gif") no-repeat center center rgba(0,0,0,0.25)
+// }
 
 // this color is arbitrary and can change. I just needed a color to see the container effects
 body {
@@ -24,10 +33,6 @@ h1 {
   text-align: center;
   padding: .1em;
   font-size: 24pt;
-}
-
-.hidden {
-  display: none;
 }
 
 .gem-image-cover {
@@ -201,7 +206,6 @@ a.navbar-brand {
   padding-top: 5px;
 }
 
-
 #gem-image {
    border: 2px solid grey;
   border-radius: 10px;
@@ -244,45 +248,12 @@ a.navbar-brand {
 //   padding-left:0;
 // }
 
-#menu-div {
-  background-color: rgba(159,159,159,.7);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  padding: 10px 10px 70px 10px;
 
-}
-
-#menu-list {
-  list-style: none;
-}
-
-#menu-icon {
-  position: fixed;
-  bottom: 15px;
-  left: 15px;
-  border: 1px solid grey;
-  border-radius: 100%;
-  background-color: rgba(159,159,159,.7);
-}
-
-#menu-gem-img {
-  max-width: 45px;
-  max-height: 45px;
-  margin: 5px 6px 6px 9px;
-}
 
 #current-user {
   display: inline-flex;
   border: 2px solid blue;
 }
-
-// style all links in menu here?
-// .menu-link {
-
-// }
 
 #pin_form {
   max-width: 90%;
@@ -339,6 +310,7 @@ a.navbar-brand {
   // background: -moz-linear-gradient(right, rgb(55, 185, 233), rgb(29, 190, 183)); /* For Firefox 3.6 to 15 */
   // background: linear-gradient(to right, rgb(55, 185, 233) , rgb(29, 190, 183)); /* Standard syntax */
   background: lightgrey;
+  margin-bottom: -2%;
   border: 2px solid lightgray;
 }
 

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show]
   resources :pintags, only: [:new, :create]
   resources :pins do
-    resources :comments, only: [:new, :create, :edit, :update, :show, :destroy]
+    resources :comments, except: :index
   end
   resource :users, only: :show
 
