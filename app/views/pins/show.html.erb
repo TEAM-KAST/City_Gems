@@ -33,7 +33,6 @@
         <a href="<%= @pin.website %>"><%= @pin.website %></a>
       </p>
     <% end %>
-    <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
 
     <% if @pin.comments %>
 
@@ -42,7 +41,6 @@
         <p>People say this gem is:</p>
         <p><%=Pin.tags_to_s(@pin)%></p>
       <% end %>
-      <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
     </div>
 
     <div id='image-container'>
@@ -79,7 +77,7 @@
     <div class="model-link-container" id="gem-show-link-container">
       <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
       <% unless current_user != @pin.user %>
-        <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
+        <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %>
       <% end %>
     </div>
     </div>
