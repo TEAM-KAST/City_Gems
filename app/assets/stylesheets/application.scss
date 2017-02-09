@@ -15,15 +15,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// #load {
+//     width:100%;
+//     height:100%;
+//     position:fixed;
+//     z-index:9999;
+//     background:url("/assets/gps.gif") no-repeat center center rgba(0,0,0,0.25)
+// }
+
 // this color is arbitrary and can change. I just needed a color to see the container effects
 body {
-  background: rgb(255, 165, 0);
+  background: rgb(211, 211, 211);
 }
 
 h1 {
   text-align: center;
   padding: .1em;
-  font-size: 2.5vh;
+  font-size: 24pt;
+}
+
+
+.gem-image-cover {
+  max-width: 100%;
+  margin: auto;
+}
+
+#notice {
+  margin: 0;
+  text-align: center;
+  text-color: rgba(159,159,159,0)
 }
 
 input.photo-submit {
@@ -50,21 +70,81 @@ input.photo-submit {
   text-align: center;
 }
 
+
+// might use this in media query for desktop
+
+// #map-placeholder {
+//   height: 500px;
+//   width: 98%;
+//   display: block;
+//   margin: auto;
+//   border: 2px solid lightgray;
+//   margin-top: .5em;
+//   margin-bottom: .5em;
+//   border-radius: 10px;
+// }
+
 #map-placeholder {
-  height: 500px;
-  width: 98%;
+  width: 100%;
+  height: 100vh;
   display: block;
-  margin: auto;
-  border: 2px solid red;
   background-color: rgba(159,159,159,.7);
-  margin-top: .5em;
-  margin-bottom: .5em;
-  border-radius: 10px;
+}
+
+.mapboxgl-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.mapboxgl-popup {
+  background-color: rgba(159,159,159,.7)
+}
+
+
+// refactor to add all popups together
+
+.popup-new-pin-form {
+  z-index: 2;
+  position: fixed;
+  background-color: rgba(55, 185, 233, .85);
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px gold;
+}
+
+#new_comment {
+  z-index: 2;
+  position: fixed;
+  background-color: #33D7FF;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px gold;
+}
+
+.edit_comment {
+  z-index: 2;
+  position: fixed;
+  background-color: #33D7FF;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 5px gold;
 }
 
 a.navbar-brand {
   font-size: 2vh;
-  padding: 1.5em;
+
 }
 
 .error-li {
@@ -72,14 +152,34 @@ a.navbar-brand {
   text-indent: none;
 }
 
-#footer-icons {
-  border-top: 2px solid grey;
-  position:fixed;
-  left:0px;
-  bottom:0px;
-  height: 5%;
-  width:100%;
-  background: lightgrey;
+.in-cover {
+  text-align: center;
+  font-size: 24pt;
+
+}
+
+#cover-title {
+  padding-top: 100px;
+  margin-top: 200px;
+  margin: auto;
+  height: 80%;
+  width: 80%;
+  color: white;
+  border-radius: 10px;
+  background: rgba(55, 185, 233,.4);
+  background: -webkit-linear-gradient(rgba(55, 185, 233,.4), rgba(29, 190, 183,.5));
+  background: -o-linear-gradient(rgba(55, 185, 233,.4), rgba(29, 190, 183,.5));
+  background: -moz-linear-gradient(red, rgba(29, 190, 183,.5));
+  background: linear-gradient(rgba(55, 185, 233,.4), rgba(29, 190, 183,.5));
+}
+
+#cover-sub {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 10px;
+  margin: auto;
+  width: 80%;
+  color: white;
 }
 
 .form-container {
@@ -91,25 +191,40 @@ a.navbar-brand {
   margin-top: .5em;
 }
 
+.image-container {
+  padding: 2%;
+  margin: 2%;
+}
+
+.edit-link {
+  margin: auto;
+  padding-top: 5px;
+  font-size: 18pt;
+  display: block;
+  text-align: center;
+  padding-left: 2em;
+  padding-top: 5px;
+}
+
+#gem-image {
+   border: 2px solid grey;
+  border-radius: 10px;
+}
+
 #gem-show-container {
   font-size: 3vh;
+  height:auto;
+  font-size: 24pt;
+  min-height: 100vh;
+  padding-bottom: 3em;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 5%;
+  border-radius: 30px;
+  background: linear-gradient(to right, rgba(29, 190, 183,.6), rgba(55, 185, 233,.6));
+
 }
 
-#gem-show-link-container {
-
-}
-
-.mapboxgl-canvas {
-  border-radius: 17px;
-}
-
-#footer-icon-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 2vh;
-  display: inline;
-}
 
 
 #login-icon {
@@ -117,17 +232,61 @@ a.navbar-brand {
   display: inline-flex;
   border: 2px solid blue;
 }
-#filter-icon {
-  margin: auto;
-  display: inline-flex;
-  border: 2px solid blue;
+
+// leaving this in case we ever have more than one icon
+
+// .icon {
+//   position: fixed;
+//   bottom: 10px;
+//   left: 50%;
+//   right: 50%;
+//   border: 1px solid grey;
+//   border-radius: 100%;
+//   background-color: rgba(159,159,159,.7);
+//   list-style:none;
+//   margin: 0;
+//   padding-left:0;
+// }
+
+#menu-div {
+  background-color: rgba(159,159,159,.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  padding: 10px 10px 70px 10px;
+
 }
+
+#menu-list {
+  list-style: none;
+}
+
 #menu-icon {
-  float: right;
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  border: 1px solid grey;
+  border-radius: 100%;
+  background-color: rgba(159,159,159,.7);
+}
+
+#menu-gem-img {
+  max-width: 45px;
+  max-height: 45px;
+  margin: 5px 6px 6px 9px;
+}
+
+#current-user {
   display: inline-flex;
   border: 2px solid blue;
-  margin-right: .5em;
 }
+
+// style all links in menu here?
+// .menu-link {
+
+// }
 
 #pin_form {
   max-width: 90%;
@@ -136,13 +295,33 @@ a.navbar-brand {
   margin: auto;
 }
 
-
 .field label {
   display: block;
 }
 
 .field input, textarea {
   background-color: rgba(159,159,159,.7)
+}
+
+#pin_image {
+  margin: auto;
+  text-align: center;
+}
+
+.cover-photo {
+   min-height: 100px;
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   max-height: 500px;
+   border-radius-bottom: 20px;
+}
+
+@media only screen and (max-width: 650px) {
+  #navbar-logo, .navbar-default {
+    display: none;
+ }
 }
 
 #navbar-logo {
@@ -164,6 +343,8 @@ a.navbar-brand {
   // background: -moz-linear-gradient(right, rgb(55, 185, 233), rgb(29, 190, 183)); /* For Firefox 3.6 to 15 */
   // background: linear-gradient(to right, rgb(55, 185, 233) , rgb(29, 190, 183)); /* Standard syntax */
   background: lightgrey;
+  margin-bottom: -2%;
+  border: 2px solid lightgray;
 }
 
 .model-link-container {
@@ -184,4 +365,10 @@ a.navbar-brand {
 #back-link {
   float: right;
   padding-right: 1em;
+}
+
+#gem-show-container {
+  margin: 2%;
+  font-size: 24pt;
+  text-align: center;
 }

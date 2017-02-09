@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205211646) do
+ActiveRecord::Schema.define(version: 20170208231333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 20170205211646) do
     t.integer  "user_id"
     t.string   "content"
     t.integer  "pin_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pin_tags", force: :cascade do |t|
-    t.integer  "pin_id"
-    t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,12 +33,22 @@ ActiveRecord::Schema.define(version: 20170205211646) do
     t.decimal  "lat",        precision: 10, scale: 6
     t.decimal  "lng",        precision: 10, scale: 6
     t.string   "name"
+    t.string   "image"
+    t.string   "width"
+    t.string   "height"
+  end
+
+  create_table "pintags", force: :cascade do |t|
+    t.integer  "pin_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "label"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "label",      default: "No Tag"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "users", force: :cascade do |t|

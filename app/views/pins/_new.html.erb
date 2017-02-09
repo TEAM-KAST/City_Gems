@@ -1,0 +1,21 @@
+<section class="popup-new-pin-form">
+  <%= form_for @pin, url: {action: "create", :controller=>"pins"} do |f| %>
+    <%= f.hidden_field :lat %>
+    <%= f.hidden_field :lng%>
+    <div class="field">
+      <%= f.label :name, 'What is this gem called?' %>
+      <%= f.text_area :name %>
+    </div>
+    <div class="field">
+      <%= f.label :appeal, 'What do you love about this gem?' %>
+      <%= f.text_area :appeal %>
+    </div>
+    <br>
+    <div class="submit-actions">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.submit 'Save', class: "btn btn-success" %>
+      <%= f.button 'Cancel', :type => 'button', id: 'new_pin_cancel', class: "btn btn-warning" %>
+    </div>
+  <% end %>
+  </div>
+</section>

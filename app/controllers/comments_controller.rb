@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_pin, only: [:new, :create, :edit, :update, :destroy]
 
 
+
   def show
   end
 
@@ -25,6 +26,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     respond_to do |format|
       if @comment.save
+        format.js {render json: @comment.to_json}
         format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully created.' }
       else
         format.html { render :new }
@@ -33,9 +35,11 @@ class CommentsController < ApplicationController
   end
 
   def update
+    p params
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully updated.' }
+        format.js {render json: @comment.to_json}
+        # format.html { redirect_to pin_path(@pin), notice: 'Comment was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -45,7 +49,10 @@ class CommentsController < ApplicationController
   def destroy
     if current_user
       @comment.destroy
-      redirect_to pin_path(@pin), notice: 'Comment was successfully destroyed.'
+      respond_to do |format|
+        # format.html {redirect_to pin_path(@pin), notice: 'Comment was successfully destroyed.'}
+        format.js {render nothing: true}
+      end
     else
       redirect_to root_path, notice: 'You have to be logged it to do that!!'
     end

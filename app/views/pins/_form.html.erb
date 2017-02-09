@@ -1,4 +1,3 @@
-
 <div id='pin_form'>
   <%=  form_for(@pin) do |f| %>
     <% if @pin.errors.any? %>
@@ -13,38 +12,43 @@
       </div>
     <% end %>
 
-  <div class="field">
-    <%= f.label :appeal, 'What do you love about this gem?' %>
-    <%= f.text_area :appeal %>
-  </div>
+    <%= f.hidden_field :lat %>
+    <%= f.hidden_field :lng%>
 
-  <div class="field">
-    <%= f.label :website, 'Website URL' %>
-    <%= f.text_field :website %>
-  </div>
+    <div class="field">
+      <%= f.label :name, 'What is this gem called?' %>
+      <%= f.text_area :name %>
+    </div>
 
-  <div class="field">
-    <%= f.label :lat, 'Latitude' %>
-    <%= f.number_field :lat, step: :any %>
-  </div>
+    <div class="field">
+      <%= f.label :appeal, 'What do you love about this gem?' %>
+      <%= f.text_area :appeal %>
+    </div>
 
-  <div class="field">
-    <%= f.label :lat, 'Longitude' %>
-    <%= f.number_field :lng, step: :any%>
-  </div>
+    <div class="field">
+      <%= f.label :website, 'Website URL' %>
+      <%= f.text_field :website %>
+    </div>
 
-  <div class="field" id="photo_upload">
-    <%= f.label :photo_url, 'Take or Upload a Picture' %>
-    <input class="photo-submit" name="Take or Upload a Picture!" type="file" accept="image/*" capture="camera">
-  </div>
 
-  <div class="field">
-    <%= f.label :photo_url, 'Or submit a link to a public photo of this gem' %>
-    <%= f.text_field :photo_url %>
-  </div>
+     <div class="field">
+      <%= f.label :image, 'Upload a Photo' %><br>
+      <%= f.file_field :image, capture: 'camera' %>
+      <% if f.object.image? %>
+        <%= image_tag f.object.image.thumb.url %>
+        <%= f.label :remove_image %>
+        <%= f.check_box :remove_image %>
+      <% end %>
+    </div>
 
-  <div class="actions">
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit 'Save' %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :photo_url, 'Or submit a link to a public photo of this gem' %>
+      <%= f.text_field :photo_url %>
+    </div>
+
+    <div class="actions">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.submit 'Save' %>
+    </div>
+  <% end %>
+</div>

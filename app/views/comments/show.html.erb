@@ -5,10 +5,11 @@
   <%= @comment.user.first_name %>
 </p>
 
-<p>
+<p id="comment-<%= @comment.id %>">
   <strong>Content:</strong>
+  <span  id='comment-content'>
   <%= @comment.content %>
+</span>
 </p>
-
 
 <%= link_to 'Back', pin_path %>

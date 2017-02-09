@@ -28,13 +28,16 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faker', '~> 1.7.2'
 gem 'ransack'
-
-
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
+gem 'aws-sdk'
+gem 'fog'
+gem 'figaro'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -59,7 +62,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'simplecov', :require => false
   gem 'rack_session_access'
-  gem 'random-location'
+  # gem 'random-location'
 end
 
 group :development do
