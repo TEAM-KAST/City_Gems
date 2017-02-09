@@ -193,6 +193,8 @@ a.navbar-brand {
 
 .edit-link {
   margin: auto;
+  padding-left: 2em;
+  padding-top: 5px;
 }
 
 #gem-image {
@@ -202,7 +204,7 @@ a.navbar-brand {
 
 #gem-show-container {
   font-size: 24pt;
-  // height: 1000px;
+  min-height: 100vh;
   padding-bottom: 3em;
   padding-left: 2%;
   padding-right: 2%;
