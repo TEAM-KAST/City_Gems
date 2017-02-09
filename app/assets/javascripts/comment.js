@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 /////page links listener/////
   $('#gem-show-container').on('click', 'a', function(event){
     event.preventDefault();
@@ -12,17 +13,21 @@ $(document).ready(function() {
       $('body').append($form)
     })
   })
+
 /////deletes comments/////
   $('#gem-show-container').on('click', '#delete', function(event){
+    event.preventDefault()
     var $target = $(event.target)
     var url = $target.attr('href')
     $.ajax({
         url: url,
-        method: 'DELETE'
-    }).done(function(){
-      debugger;
+        method: 'DELETE',
+        success: function(){
+          $target.closest('#comment-start').remove()
+        }
     })
   })
+
  /////edit submission form listener/////
   $('body').on('submit', '.edit_comment', function(event){
     event.preventDefault();
@@ -42,6 +47,7 @@ $(document).ready(function() {
       $target.remove();
     })
   })
+
 /////new comment submission form listener/////
   $('body').on('submit', '#new_comment', function(event){
     event.preventDefault();
