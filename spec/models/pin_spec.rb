@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Pin, type: :model do
-
-
   describe 'validations' do
     it { is_expected.to validate_numericality_of :lat }
     it { is_expected.to validate_numericality_of :lng }
@@ -23,9 +21,8 @@ RSpec.describe Pin, type: :model do
     let!(:pin) { create(:pin)}
     let!(:pintag) { create(:pintag)}
     let!(:tag) { create(:tag)}
-    it "changes the tag object's to a string" do
-      p Pin.tags_to_s(pin)
-      expect(Pin.tags_to_s(pin)).to eq "Quirky"
+    it "changes the tag object's label to a string" do
+      expect(Pin.tags_to_s(pin)).to eq(tag.label)
     end
   end
 end
