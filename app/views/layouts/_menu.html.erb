@@ -1,6 +1,23 @@
-<% if current_user %>
-  <%= link_to current_user.first_name, users_path, id: "current-user"%>
-  <%= link_to "Sign out", signout_path, id: "sign_out" %>
-<% else %>
-  <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign-icon" %>
-<% end %>
+<div id="menu-div">
+  <ul id="menu-list">
+
+    <li> <%= link_to "Home", root_path %></li>
+    <% if current_user %>
+      <li> Signed in as <%= link_to current_user.first_name, users_path, class: "menu-link"%> </li>
+
+    <% end %>
+
+    <% if current_page?('/pins') || current_page?(root_path) %>
+      <li>Filter</li>
+      <%= render partial: 'search_form' %>
+    <% end %>
+
+    <li> <%= link_to "About", about_path %> </li>
+    <% if current_user %>
+      <li> <%= link_to "Sign out", signout_path, class: "menu-link", id: "menu-signin" %> </li>
+    <% else %>
+      <li> <%= link_to "Sign in", "/auth/google_oauth2", class: "menu-link", id: "menu-signout" %> </li>
+    <% end %>
+  </ul>
+
+</div>
