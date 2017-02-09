@@ -155,7 +155,7 @@ map.on('load', function(){
           var link = '/pins/new?longitude='+ event.lngLat.lng + '&latitude='+ event.lngLat.lat
         var popup = new mapboxgl.Popup({offset:popupOffsets})
           .setLngLat(event.lngLat)
-          .setHTML('<a id="new-gem-button" href="'+link+'">Add Gem</a>')
+          .setHTML('<a id="new-gem-button" class="btn btn-xs btn-info" href="'+link+'">Add Gem</a>')
           .addTo(map);
 
           addGemPopup = popup;

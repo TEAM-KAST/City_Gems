@@ -34,8 +34,26 @@ h1 {
   font-size: 24pt;
 }
 
-.hidden {
-  display: none;
+a {
+  color: black;
+}
+
+.about-us-gh a:hover {
+  text-decoration: none;
+  color: orange;
+}
+
+.about-us-container {
+  border:solid 2px black;
+  margin-top: 5%;
+  margin-left: 10%;
+  height: 70%;
+  width: 78%;
+  padding: 2%;
+  font-size: 2em;
+}
+
+.about-paragraphs {
 }
 
 .gem-image-cover {
