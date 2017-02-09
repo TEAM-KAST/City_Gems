@@ -68,5 +68,10 @@ $(document).ready(function() {
     })
   })
 
+/////Listener for cancel button/////
+  $('body').on('click', '.mapboxgl-popup-close-button', function(event){
+    event.preventDefault();
+    this.parentElement.remove();
+  })
 
 });

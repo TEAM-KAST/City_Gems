@@ -22,20 +22,7 @@
 </head>
 <body>
 
-<style>
 
-#marker {
-    background-image: url('https://www.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-
-
-</style>
 
 <!-- <div id="map-placeholder"> -->
 <script>
@@ -180,8 +167,8 @@ map.on('load', function(){
 
   // Use the same approach as above to indicate that the symbols are clickable
   // by changing the cursor style to 'pointer'.
-  map.on('mousemove', function (e) {
-      var features = map.queryRenderedFeatures(e.point, { layers: ['pins'] });
+  map.on('mousemove', function (event) {
+      var features = map.queryRenderedFeatures(event.point, { layers: ['pins'] });
       map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 });
 
