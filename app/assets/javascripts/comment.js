@@ -9,7 +9,7 @@ $(document).ready(function() {
       url: url,
       method: "GET"
     }).done(function(data){
-      var $form = $(data).closest('form');
+      var $form = $(data).children('form');
       $('body').append($form)
     })
   })
@@ -61,12 +61,17 @@ $(document).ready(function() {
       data: data,
       dataType: 'html'
     }).done(function(response){
-      var $commentToPost = $(response).children('#gem-show-container').children('#comments-container').children('#comment-start:first')
+      var $commentToPost = $(response).children('#gem-show-page').children('#gem-show-container').children('#comments-container').children('#comment-start:first')
       $('#comments-container').prepend($commentToPost)
       $target.remove();
 
     })
   })
 
+/////Listener for cancel button/////
+  $('body').on('click', '.mapboxgl-popup-close-button', function(event){
+    event.preventDefault();
+    this.parentElement.remove();
+  })
 
 });
