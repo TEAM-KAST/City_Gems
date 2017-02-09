@@ -12,7 +12,7 @@
       <tr>
         <td class="td_link">  <%= link_to "#{pin.name.titlecase}", pin %></td>
         <td> <%= pin.appeal.capitalize %> </td>
-        <td> <%= Pin.tags(pin) %> </td>       
+        <td> <%= Pin.tags_to_s(pin) %> </td>
       </tr>
     <% end %>
   </tbody>
