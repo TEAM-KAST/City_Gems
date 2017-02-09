@@ -176,6 +176,13 @@ a.navbar-brand {
 //   padding-left:0;
 // }
 
+#menu-list {
+  background-color: rgba(159,159,159,.7);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
 #menu-icon {
   position: fixed;
   bottom: 15px;
