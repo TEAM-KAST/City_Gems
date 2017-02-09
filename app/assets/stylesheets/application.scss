@@ -207,6 +207,8 @@ a.navbar-brand {
 }
 
 #gem-show-container {
+  font-size: 3vh;
+  height:auto;
   font-size: 24pt;
   min-height: 100vh;
   padding-bottom: 3em;
@@ -215,6 +217,7 @@ a.navbar-brand {
   padding-top: 5%;
   border-radius: 30px;
   background: linear-gradient(to right, rgba(29, 190, 183,.6), rgba(55, 185, 233,.6));
+
 }
 
 #gem-show-link-container {

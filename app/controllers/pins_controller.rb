@@ -58,6 +58,7 @@ class PinsController < ApplicationController
   def update
     respond_to do |format|
       if @pin.update(pin_params)
+        format.js { render 'comments/_form'}
         format.html { redirect_to @pin, notice: 'Gem was successfully updated.' }
       else
         format.html { render :edit }

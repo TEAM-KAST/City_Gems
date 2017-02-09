@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.new-comment-link').on('click', function(event){
+  $('#gem-show-container').on('click', 'a', function(event){
     event.preventDefault();
     var $target = $(event.target)
     var url = ($target.attr('href'));
@@ -11,19 +11,44 @@ $(document).ready(function() {
       $('body').append($form)
     })
   })
-});
 
-$(document).ready(function() {
-  $('#gem-show-container').on('click', function(event){
+  $('body').on('submit', '.edit_comment', function(event){
     event.preventDefault();
     var $target = $(event.target)
-    var url = ($target.attr('href'));
-    $.ajax ({
-      url: url,
-      method: "GET"
+    var $url = $('body').children('form')["0"].getAttribute('action')
+    var data = $target.serialize()
+    var $form = $(this).closest('form');
+    $.ajax({
+      url: $url,
+      method: "PUT",
+      data: data,
+      dataType: 'JSON'
     }).done(function(data){
-      var $form = $(data).closest('form');
-      $('body').append($form)
+      var $commentId = $('body').children('form')["0"].getAttribute('action').substring(17)
+      var spanId = "#comment-"+ $commentId
+      $(spanId).html(data.content)
+      $target.remove();
     })
   })
+
+  $('body').on('submit', '#new_comment', function(event){
+    event.preventDefault();
+    var $form = $(this);
+    var data = $form.serialize();
+    var $target = $(event.target)
+    var $url = $('body').children('form')["0"].getAttribute('action');
+    $.ajax ({
+      url: $url,
+      method: "POST",
+      data: data,
+      dataType: 'html'
+    }).done(function(response){
+      var $commentToPost = $(response).children('#comments-container').children('#comment-start:last')
+      $('#comments-container').prepend($commentToPost)
+      $target.remove();
+
+    })
+  })
+
+
 });

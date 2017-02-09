@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div id="gem-show-container">
+  <p>Name: <%= @pin.name %></p>
+  <p>Appeal: <%= @pin.appeal %></p>
+
 <% if @pin.image %>
   <style>
     .cover-photo {
@@ -34,6 +38,10 @@
     <a href="<%= @pin.website %>"><%= @pin.website %></a>
   </p>
   <% end %>
+  <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
+</div>
+<div id="comments-container">
+  <% if @pin.comments %>
   <div id="tags-container">
     <% if @pin.pintags %>
       <p>People say this gem is:</p>
@@ -49,18 +57,26 @@
   <% unless @pin.comments.blank?%>
   <p>Comments:</p>
     <% @pin.comments.each do |comment| %>
+    <div id="comment-start">
       <p>
         <b>Commenter:</b>
         <%= comment.user.first_name %>
-      </p>
 
+      </p>
+      <div id='comment-field'>
       <p>
         <b>Comment:</b>
+          <span  id="comment-<%= comment.id %>">
         <%= comment.content %>
+      </span>
       </p>
-
+    </div>
+    <div id='comment-link-field'>
       <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment) %> |
       <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
+    </div>
+  </div>
+
     <% end %>
   <% end %>
 
@@ -69,4 +85,5 @@
     <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
     <%= link_to 'Back', pins_path %>
   </div>
+</div>
 </div>
