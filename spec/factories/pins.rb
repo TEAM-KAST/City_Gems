@@ -7,5 +7,8 @@ FactoryGirl.define do
     website "www.reallypretty.like"
     lat 47.5979520
     lng -122.3349440
+    image ""
+    width ""
+    height ""
   end
 end
