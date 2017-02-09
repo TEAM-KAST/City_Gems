@@ -135,7 +135,7 @@ input.photo-submit {
 
 a.navbar-brand {
   font-size: 2vh;
-  padding: 1.5em;
+
 }
 
 .error-li {
@@ -146,7 +146,7 @@ a.navbar-brand {
 .in-cover {
   text-align: center;
   font-size: 24pt;
-  background-color: rgba(55, 185, 233, .1);
+
 }
 
 #cover-title {
@@ -185,6 +185,8 @@ a.navbar-brand {
 #gem-show-container {
   font-size: 24pt;
   height: 1000px;
+  border-radius: 30px;
+  background: linear-gradient(rgba(29, 190, 183,.6), rgba(55, 185, 233,.6));
 }
 
 #gem-show-link-container {

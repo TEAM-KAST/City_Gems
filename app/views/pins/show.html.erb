@@ -6,7 +6,7 @@
       /* The image used */
       background-image: url("<%= @pin.image %>");
       background-size: 2000px;
-      background-position: center 10%;
+      background-position: center 10px;
     }
   </style>
 
@@ -34,6 +34,10 @@
       <p><%=Pin.tags_to_s(@pin)%></p>
     <% end %>
     <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
+  </div>
+
+  <div id='photo-container'>
+
   </div>
 
   <% if @pin.comments %>
