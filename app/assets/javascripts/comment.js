@@ -14,8 +14,14 @@ $(document).ready(function() {
   })
 /////deletes comments/////
   $('#gem-show-container').on('click', '#delete', function(event){
-
-
+    var $target = $(event.target)
+    var url = $target.attr('href')
+    $.ajax({
+        url: url,
+        method: 'DELETE'
+    }).done(function(){
+      debugger;
+    })
   })
  /////edit submission form listener/////
   $('body').on('submit', '.edit_comment', function(event){
@@ -50,7 +56,6 @@ $(document).ready(function() {
       dataType: 'html'
     }).done(function(response){
       var $commentToPost = $(response).children('#gem-show-container').children('#comments-container').children('#comment-start:first')
-      debugger;
       $('#comments-container').prepend($commentToPost)
       $target.remove();
 
