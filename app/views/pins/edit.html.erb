@@ -1,10 +1,9 @@
 <h1>Update this Gem</h1>
-
 <div class="form-container">
-  <%= render 'form', pin: @pin %>
+
+    <%= render 'form', pin: @pin %>
 </div>
 
 <div class='model-link-container'>
-  <%= link_to 'Gem Page', @pin, class: 'model-link', id: 'gem-show-link' %>
-  <%= link_to 'Back', pins_path, class: 'model-link', id: 'back-link' %>
+  <%= link_to 'Return to Gem Profile', @pin, class: 'model-link', id: 'back-link' %>
 </div>
