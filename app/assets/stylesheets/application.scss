@@ -176,11 +176,22 @@ a.navbar-brand {
 //   padding-left:0;
 // }
 
-#menu-list {
+#menu-div {
   background-color: rgba(159,159,159,.7);
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100vw;
+  padding: 10px 10px 70px 10px;
+
+}
+#explore {
+  width: 80vw;
+}
+
+#filter-submit {
+  float: right;
 }
 
 #menu-icon {
@@ -202,6 +213,11 @@ a.navbar-brand {
   display: inline-flex;
   border: 2px solid blue;
 }
+
+// style all links in menu here?
+// .menu-link {
+
+// }
 
 #pin_form {
   max-width: 90%;
