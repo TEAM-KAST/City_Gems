@@ -91,7 +91,9 @@
 
   <div class="model-link-container" id="gem-show-link-container">
     <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
+    <% if current_user == @pin.user %>
     <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
+    <% end %>
     <%= link_to 'Back', pins_path %>
   </div>
   </div>
