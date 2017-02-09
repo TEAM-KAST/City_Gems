@@ -1,45 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-
 <div id="gem-show-page">
-<!-- changed from 'gem-show-container' to 'gem-show-page' due to duplicate div id -->
+  <% if @pin.image %>
+    <style>
+      .cover-photo {
+        background-image: url("<%= @pin.image %>");
+        background-size: 2000px;
+        background-position: center 100px;
+      }
+    </style>
 
-<% if @pin.image %>
-  <style>
-    .cover-photo {
-      /* The image used */
-      background-image: url("<%= @pin.image %>");
-      background-size: 2000px;
-      background-position: center 100px;
-    }
-  </style>
-
-  <div class='cover-photo'>
-    <div class="in-cover">
-      <h1 id='cover-title'><%= @pin.name %></h1>
-      <h2 id='cover-sub'><%= @pin.appeal %></h2>
+    <div class='cover-photo'>
+      <div class="in-cover">
+        <h1 id='cover-title'><%= @pin.name %></h1>
+        <h2 id='cover-sub'><%= @pin.appeal %></h2>
+      </div>
     </div>
-  </div>
 
-<% else %>
-  <p class="in-cover">Name: <%= @pin.name %></p>
-  <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
-<% end %>
-
-<% unless current_user == !@pin.user %>
-  <%= link_to 'Edit Gem Profile & Upload/Change Photo', edit_pin_path(@pin), class: 'edit-link' %>
-<% end %>
-
-<div id="gem-show-container" >
-  <p>Added by: <%= "#{@pin.user.first_name} #{@pin.user.last_name}" %></p>
-  <% unless @pin.website.blank? %>
-  <p>Website:
-    <a href="<%= @pin.website %>"><%= @pin.website %></a>
-  </p>
+  <% else %>
+    <p class="in-cover">Name: <%= @pin.name %></p>
+    <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
   <% end %>
-</div>
 
-  <% if @pin.comments %>
+  <% unless current_user != @pin.user %>
+    <%= link_to 'Edit Gem Profile & Upload/Change Photo', edit_pin_path(@pin), class: 'edit-link' %>
+  <% end %>
+
+  <div id="gem-show-container" >
+    <p>Added by: <%= "#{@pin.user.first_name} #{@pin.user.last_name}" %></p>
+    <% unless @pin.website.blank? %>
+      <p>Website:
+        <a href="<%= @pin.website %>"><%= @pin.website %></a>
+      </p>
+    <% end %>
 
     <div id="tags-container">
       <% if @pin.pintags %>
@@ -52,43 +45,39 @@
       <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
     </div>
 
-  <div id="comments-container">
+    <% unless @pin.comments.blank? %>
+      <div id="comments-container">
+        <p>Comments:</p>
+          <% @pin.comments.reverse_each do |comment| %>
+          <div id="comment-start">
+            <p>
+              <b>Commenter:</b>
+              <%= comment.user.first_name %>
+            </p>
+            <div id='comment-field'>
+              <p>
+                <b>Comment:</b>
+                <span id="comment-<%= comment.id %>">
+                  <%= comment.content %>
+                </span>
+              </p>
+            </div>
+          </div>
+          <div id='comment-link-field'>
+            <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment), id: 'edit'%> |
+            <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE", id: 'delete', remote: true %>
+          </div>
+          <% end %>
+      </div>
+    <% end %>
 
-  <!-- Moving tags-container out of comments-container -->
-    <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
- <!-- Moving image-container out of comments-container -->
-
-
-  <% unless @pin.comments.blank?%>
-  <p>Comments:</p>
-    <% @pin.comments.reverse_each do |comment| %>
-    <div id="comment-start">
-      <p>
-        <b>Commenter:</b>
-        <%= comment.user.first_name %>
-      </p>
-      <div id='comment-field'>
-      <p>
-        <b>Comment:</b>
-          <span id="comment-<%= comment.id %>">
-        <%= comment.content %>
-      </span>
-      </p>
+    <div class="model-link-container" id="gem-show-link-container">
+      <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
+      <% unless current_user != @pin.user %>
+      <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
+      <% end %>
+      <%= link_to 'Back', pins_path %>
     </div>
-    <div id='comment-link-field'>
-      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment), id: 'edit'%> |
-      <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE", id: 'delete', remote: true %>
-    </div>
 
-   <% end %>
-  <% end %>
-<% end %>
-
-  <div class="model-link-container" id="gem-show-link-container">
-    <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
-    <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %> |
-    <%= link_to 'Back', pins_path %>
   </div>
-  </div>
-</div>
 </div>
