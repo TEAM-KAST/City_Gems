@@ -6,6 +6,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
+  process :store_dimensions
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -32,8 +34,20 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+
+  version :mobile do
+    process :resize_to_fit => [300, 500]
+    process :store_dimensions
+  end
+
   version :thumb do
     process :resize_to_fit => [50, 50]
+    process :store_dimensions
+  end
+
+  version :cover do
+    process :resize_to_fit => [700, 700]
+    process :store_dimensions
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -47,5 +61,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  private
+
+  def store_dimensions
+    if file && model
+      model.width, model.height = ::MiniMagick::Image.open(file.file)[:dimensions]
+    end
+  end
 
 end
