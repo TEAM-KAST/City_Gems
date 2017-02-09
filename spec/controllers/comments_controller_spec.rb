@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xRSpec.describe CommentsController, type: :controller do
+RSpec.describe CommentsController, type: :controller do
   let!(:pin) { create(:pin) }
   let!(:comment) { create(:comment) }
   let!(:invalid_attributes) { {content: "nothing to see here"} }
