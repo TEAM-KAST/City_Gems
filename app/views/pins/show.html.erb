@@ -23,15 +23,17 @@
   <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
 <% end %>
 
-<% if current_user = @pin.user %>
-  <%= link_to 'Edit this Gem Profile & Upload a Photo', edit_pin_path(@pin), class: 'edit-link' %>
+<% unless current_user == !@pin.user %>
+  <%= link_to 'Edit Gem Profile & Upload/Change Photo', edit_pin_path(@pin), class: 'edit-link' %>
 <% end %>
 
 <div id="gem-show-container" >
   <p>Added by: <%= "#{@pin.user.first_name} #{@pin.user.last_name}" %></p>
+  <% unless @pin.website.blank? %>
   <p>Website:
     <a href="<%= @pin.website %>"><%= @pin.website %></a>
   </p>
+  <% end %>
   <div id="tags-container">
     <% if @pin.pintags %>
       <p>People say this gem is:</p>
@@ -44,7 +46,7 @@
     <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
   </div>
 
-  <% if @pin.comments %>
+  <% unless @pin.comments.blank?%>
   <p>Comments:</p>
     <% @pin.comments.each do |comment| %>
       <p>
