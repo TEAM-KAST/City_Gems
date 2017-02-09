@@ -33,16 +33,14 @@ $(document).ready(function() {
         data: data,
         dataType: 'html',
         success: function(response) {
-          console.log("RESPONSE", response)
           var $pintagForm = $(response);
            $('#new_pin').append($pintagForm);
         },
         fail: function(response) {
-          console.log("fail", response);
+          console.log("Something went wrong. :\'");
         },
-        error: function(response, jqXHR) {
-          console.log("ERROR", response);
-          console.log("xhr", jqXHR);
+        error: function(response) {
+          console.log("Something went wrong. :\'")
         }
       });
     });
