@@ -4,7 +4,9 @@
   <style>
     .cover-photo {
       /* The image used */
-      background-image: url("<%= @pin.image.cover %>");
+      background-image: url("<%= @pin.image %>");
+      background-size: 2000px;
+      background-position: center 10%;
     }
   </style>
 
@@ -18,9 +20,8 @@
 
 <% else %>
   <p class="in-cover">Name: <%= @pin.name %></p>
+  <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
 <% end %>
-
- <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
 
 <div id="gem-show-container" >
   <p>Creator: <%= @pin.user.first_name %></p>

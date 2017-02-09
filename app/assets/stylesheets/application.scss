@@ -151,9 +151,26 @@ a.navbar-brand {
 
 #cover-title {
   padding-top: 100px;
-  margin-top: 100px;
+  margin-top: 200px;
   margin: auto;
-  width: 80%
+  height: 80%;
+  width: 80%;
+  color: white;
+  border-radius: 10px;
+  background: rgba(55, 185, 233,.4);
+  background: -webkit-linear-gradient(rgba(55, 185, 233,.4), rgba(29, 190, 183,.5));
+  background: -o-linear-gradient(rgba(55, 185, 233,.4), rgba(29, 190, 183,.5));
+  background: -moz-linear-gradient(red, rgba(29, 190, 183,.5));
+  background: linear-gradient(rgba(55, 185, 233,.4), rgba(29, 190, 183,.5));
+}
+
+#cover-sub {
+  padding-top: 10px;
+  padding-bottom: 100px;
+  margin-bottom: 10px;
+  margin: auto;
+  width: 80%;
+  color: white;
 }
 
 .form-container {
@@ -167,7 +184,7 @@ a.navbar-brand {
 
 #gem-show-container {
   font-size: 24pt;
-  height: 100px;
+  height: 1000px;
 }
 
 #gem-show-link-container {
@@ -261,7 +278,7 @@ a.navbar-brand {
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
-   max-height: 400px;
+   max-height: 500px;
    border-radius-bottom: 20px;
 }
 
