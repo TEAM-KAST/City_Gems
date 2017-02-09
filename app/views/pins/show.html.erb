@@ -80,8 +80,8 @@
       </p>
     </div>
     <div id='comment-link-field'>
-      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment) %> |
-      <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE" %>
+      <%= link_to 'Edit This Comment', edit_pin_comment_path(@pin, comment), id: 'edit'%> |
+      <%= link_to 'Delete Comment', pin_comment_path(@pin, comment), method: "DELETE", id: 'delete', remote: true %>
     </div>
   </div>
 

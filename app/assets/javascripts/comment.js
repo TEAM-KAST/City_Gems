@@ -1,4 +1,5 @@
 $(document).ready(function() {
+/////page links listener/////
   $('#gem-show-container').on('click', 'a', function(event){
     event.preventDefault();
     var $target = $(event.target)
@@ -11,7 +12,12 @@ $(document).ready(function() {
       $('body').append($form)
     })
   })
+/////deletes comments/////
+  $('#gem-show-container').on('click', '#delete', function(event){
 
+
+  })
+ /////edit submission form listener/////
   $('body').on('submit', '.edit_comment', function(event){
     event.preventDefault();
     var $target = $(event.target)
@@ -30,7 +36,7 @@ $(document).ready(function() {
       $target.remove();
     })
   })
-
+/////new comment submission form listener/////
   $('body').on('submit', '#new_comment', function(event){
     event.preventDefault();
     var $form = $(this);
@@ -44,6 +50,7 @@ $(document).ready(function() {
       dataType: 'html'
     }).done(function(response){
       var $commentToPost = $(response).children('#gem-show-container').children('#comments-container').children('#comment-start:first')
+      debugger;
       $('#comments-container').prepend($commentToPost)
       $target.remove();
 
