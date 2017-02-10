@@ -10,7 +10,24 @@
 }
 
 #menu-list {
+  padding-left: 28px;
+  padding-bottom: 8px;
   list-style: none;
+  li {
+    width: 50%;
+    max-width: 300px;
+    background-color: rgba(239, 130, 46,.7);
+    margin: 5px;
+    padding: 2px;
+    border-left: 3px solid #FFA35C;
+    a {
+      color: inherit;
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 
 #menu-icon {
