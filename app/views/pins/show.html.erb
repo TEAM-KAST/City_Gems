@@ -31,7 +31,7 @@
     <p>Added by: <%= "#{@pin.user.first_name} #{@pin.user.last_name}" %></p>
     <% unless @pin.website.blank? %>
       <p>Website:
-        <a href="<%= @pin.website %>"><%= @pin.website %></a>
+        <a id="gem-website" href="<%= @pin.website %>"><%= @pin.website %></a>
       </p>
     <% end %>
 
@@ -83,9 +83,9 @@
   <% end %>
 
     <div class="model-link-container" id="gem-show-link-container">
-      <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
+      <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> <br/>
       <% unless current_user != @pin.user %>
-        <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %>
+        <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE", id: "delete-gem-link" %>
       <% end %>
     </div>
     </div>
