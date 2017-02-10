@@ -4,7 +4,7 @@ module SessionsHelper
   end
 
   def logged_in?
-  p  current_user
+    current_user
   end
 
   def log_in(user)
