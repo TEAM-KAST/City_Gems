@@ -51,6 +51,7 @@
           <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
         <% elsif !@pin.photo_url.blank? %>
           <%= image_tag(@pin.photo_url, width: '100%', id: 'gem-image' )%>
+          <p id="photo-attribution">Source: <a href:="<%= @pin.photo_url %>"><%= @pin.photo_url %></p>
         <% end %>
       </div>
     <% end %>
