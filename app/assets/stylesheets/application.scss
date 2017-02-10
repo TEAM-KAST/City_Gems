@@ -194,6 +194,8 @@ a.navbar-brand {
   margin: auto;
   width: 80%;
   color: white;
+  backdrop-filter: 8px;
+
 }
 
 .form-container {
@@ -214,6 +216,12 @@ a.navbar-brand {
   margin: 2%;
 }
 
+#photo-attribution {
+  font-size: 12pt;
+  color: white;
+  border-radius: 15px;
+}
+
 .edit-link {
   margin: auto;
   padding-top: 5px;
@@ -229,11 +237,11 @@ a.navbar-brand {
   border-radius: 10px;
 }
 
+
 #gem-show-container {
   font-size: 3vh;
   height:auto;
   font-size: 24pt;
-  min-height: 100vh;
   padding-bottom: 3em;
   padding-left: 2%;
   padding-right: 2%;
@@ -306,6 +314,7 @@ select {
    background-size: cover;
    max-height: 500px;
    border-radius-bottom: 20px;
+
 }
 
 @media only screen and (max-width: 650px) {
