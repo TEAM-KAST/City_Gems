@@ -54,8 +54,8 @@
       </div>
     <% end %>
 
+    <div id="comments-container">
   <% unless @pin.comments.blank?%>
-  <div id="comments-container">
     <p>Comments:</p>
       <% @pin.comments.reverse_each do |comment| %>
       <div id="comment-start">
