@@ -49,6 +49,7 @@ class PinsController < ApplicationController
           format.js { render 'pintags/_form'}
         else
           format.html { redirect_to root_path, notice: 'Gem was not able to be created!'}
+          format.js
         end
       end
     else

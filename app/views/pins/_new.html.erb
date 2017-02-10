@@ -4,11 +4,11 @@
     <%= f.hidden_field :lng%>
     <div class="field">
       <%= f.label :name, 'What is this gem called?' %>
-      <%= f.text_area :name %>
+      <%= f.text_area :name, :required => true %>
     </div>
     <div class="field">
       <%= f.label :appeal, 'What do you love about this gem?' %>
-      <%= f.text_area :appeal %>
+      <%= f.text_area :appeal, :required => true %>
     </div>
     <br>
     <div class="submit-actions">
