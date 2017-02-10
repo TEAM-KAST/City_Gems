@@ -1,0 +1,6 @@
+// why is this not working?
+@media screen and (max-width: 650px) {
+  nav, #navbar-logo, .navbar-default, .navbar-container, .img-responsive2 {
+    display: none !important;
+  };
+}

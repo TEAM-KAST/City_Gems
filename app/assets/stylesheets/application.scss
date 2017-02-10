@@ -46,6 +46,10 @@ h1 {
   text-color: rgba(159,159,159,0)
 }
 
+input > submit {
+  color: blue;
+}
+
 input.photo-submit {
    background-color: rgba(159,159,159,.7);
     border: none;
@@ -69,20 +73,6 @@ input.photo-submit {
   width: 80%;
   text-align: center;
 }
-
-
-// might use this in media query for desktop
-
-// #map-placeholder {
-//   height: 500px;
-//   width: 98%;
-//   display: block;
-//   margin: auto;
-//   border: 2px solid lightgray;
-//   margin-top: .5em;
-//   margin-bottom: .5em;
-//   border-radius: 10px;
-// }
 
 #map-placeholder {
   width: 100%;
@@ -152,11 +142,6 @@ input.photo-submit {
   box-shadow: 0px 0px 30px 5px gold;
 }
 
-a.navbar-brand {
-  font-size: 2vh;
-
-}
-
 .error-li {
   list-style: none;
   text-indent: none;
@@ -165,7 +150,6 @@ a.navbar-brand {
 .in-cover {
   text-align: center;
   font-size: 24pt;
-
 }
 
 #cover-title {
@@ -197,6 +181,10 @@ a.navbar-brand {
   font-size: 3vh;
 }
 
+#pin_form {
+  background-color: rgba(159,159,159,.4)
+}
+
 #photo_upload {
   margin-top: .5em;
 }
@@ -217,7 +205,7 @@ a.navbar-brand {
 }
 
 #gem-image {
-   border: 2px solid grey;
+  border: 2px solid rgba(159,159,159,.6);
   border-radius: 10px;
 }
 
@@ -281,7 +269,8 @@ select {
 }
 
 .field input, textarea {
-  background-color: rgba(159,159,159,.7)
+  background-color: rgba(159,159,159,.7);
+  max-width: 85%;
 }
 
 #pin_image {
@@ -299,10 +288,8 @@ select {
    border-radius-bottom: 20px;
 }
 
-@media only screen and (max-width: 650px) {
-  #navbar-logo, .navbar-default {
-    display: none;
- }
+.navbar-container {
+  margin-bottom: 1.2em;
 }
 
 #navbar-logo {
@@ -346,6 +333,7 @@ select {
 #back-link {
   float: right;
   padding-right: 1em;
+  margin-top: .5em;
 }
 
 #gem-show-container {

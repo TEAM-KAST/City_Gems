@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :pin_tag do
+  factory :pintag do
     pin
     tag
   end
