@@ -8,7 +8,7 @@
     <% end %>
 
     <% if current_page?('/pins') || current_page?(root_path) %>
-      <li>Filter</li>
+      <li id="filter-li-menu">Filter</li>
       <%= render partial: 'search_form' %>
     <% end %>
 
