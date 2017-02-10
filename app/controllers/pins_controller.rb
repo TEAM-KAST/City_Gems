@@ -29,7 +29,7 @@ class PinsController < ApplicationController
     else
       respond_to do |format|
         format.html { redirect_to root_path, notice: 'You have to be logged it to do that!!' }
-        format.js { redirect_to root_path, notice: 'You have to be logged it to do that!!' }
+        format.js 
       end
     end
   end
@@ -49,6 +49,7 @@ class PinsController < ApplicationController
           format.js { render 'pintags/_form'}
         else
           format.html { redirect_to root_path, notice: 'Gem was not able to be created!'}
+          format.js
         end
       end
     else

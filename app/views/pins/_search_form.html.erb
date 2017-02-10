@@ -1,10 +1,10 @@
 <div id="explore">
 
   <%= search_form_for @q do |f| %>
-    <%= f.label :pintag, 'Today I\'d like to see something:' %>
+    <%= f.label :pintag, 'I\'d like to see something:' %>
     <%= f.collection_select(:pintags_tag_id_eq, Tag.all, :id, :label, prompt: 'tags', include_blank: 'All') %><br>
     <%= f.label :name_or_appeal_or_user_first_name_or_user_last_name_cont, "Search gems" %>
-    <%= f.search_field :name_or_appeal_or_user_first_name_or_user_last_name_cont, placeholder: "by name, appeal, or user" %>
+    <%= f.search_field :name_or_appeal_or_user_first_name_or_user_last_name_cont, placeholder: "by name, appeal, user" %>
 
     <div id="filter-submit">
       <%= f.submit %>
