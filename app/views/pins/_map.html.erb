@@ -42,7 +42,7 @@ var pins = <%== @pins.to_json %>;//nifty way to get Ruby info as json
 mapboxgl.accessToken = "<%== ENV['MAPBOX_API_KEY'] %>";
 var map = new mapboxgl.Map({
     container: 'map-placeholder', // container id
-    style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
+    style: 'mapbox://styles/hidefstatic/ciyyx0tza002h2rmktua1iuk9', //stylesheet location
     center: [-122.3321, 47.6062], // starting position
     zoom: 11 // starting zoom
 });
@@ -90,7 +90,8 @@ map.on('load', function(){
     type: "symbol",
     source: "pins",
     layout: {
-      "icon-image": "star-15",
+      "icon-image": "ruby",
+      "icon-size": 0.3,
       "icon-allow-overlap": true
     }
 
@@ -109,7 +110,7 @@ map.on('load', function(){
     source: "single-point",
     type: "symbol",
     layout: {
-      "icon-image": "star-15",
+      "icon-image": "ruby",
       "icon-allow-overlap": true
     }
 
