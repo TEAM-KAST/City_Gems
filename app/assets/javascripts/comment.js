@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 /////page links listener/////
-  $('#gem-show-container').on('click', 'a', function(event){
+  $('#gem-show-container').on('click', '#comments-container', function(event){
     event.preventDefault();
     var $target = $(event.target)
     var url = ($target.attr('href'));

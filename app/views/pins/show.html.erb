@@ -36,7 +36,7 @@
   <p>Added by: <%= "#{@pin.user.first_name} #{@pin.user.last_name}" %></p>
   <% unless @pin.website.blank? %>
   <p>Website:
-    <a href="<%= @pin.website %>"><%= @pin.website %></a>
+    <a href="http://<%= @pin.website %>"><%= @pin.website %></a>
   </p>
   <% end %>
   <%#= render partial: 'pintags/form', locals: {pin: @pin, pintag: Pintag.new} %>
