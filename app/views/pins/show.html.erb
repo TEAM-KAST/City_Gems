@@ -2,10 +2,15 @@
 
 
 <div id="gem-show-page">
-  <% if @pin.image %>
     <style>
       .cover-photo {
+        <% if @pin.image %>
         background-image: url("<%= @pin.image %>");
+        <% elsif @pin.photo_url %>
+        background-image: url("<%= @pin.photo_url %>");
+        <% else %>
+        background-image: image-url('seattle.jpg');
+        <% end %>
         background-height: 100%;
         background-position: center top;
       }
@@ -18,25 +23,6 @@
       </div>
     </div>
 
-  </div>
-
-<% else %>
-  <p class="in-cover">Name: <%= @pin.name %></p>
-  <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
-<% end %>
-
-<% unless current_user == !@pin.user %>
-  <%= link_to 'Edit Gem Profile & Upload/Change Photo', edit_pin_path(@pin), class: 'edit-link' %>
-<% end %>
-
-<div id="gem-show-container" >
-  <p>Added by: <%= "#{@pin.user.first_name} #{@pin.user.last_name}" %></p>
-  <% unless @pin.website.blank? %>
-  <p>Website:
-    <a href="http://<%= @pin.website %>"><%= @pin.website %></a>
-  </p>
-
-  <% end %>
 
   <% unless current_user == !@pin.user %>
     <%= link_to 'Edit Gem Profile & Upload/Change Photo', edit_pin_path(@pin), class: 'edit-link' %>
@@ -59,9 +45,16 @@
       <% end %>
     </div>
 
-    <div id='image-container'>
-      <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
-    </div>
+    <% unless !@pin.image || !@pin.photo_url %>
+      <div id='image-container'>
+        <% if !@pin.image.blank? %>
+          <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
+        <% elsif !@pin.photo_url.blank? %>
+          <%= image_tag(@pin.photo_url, width: '100%', id: 'gem-image' )%>
+          <p id="photo-attribution">Source: <%= @pin.photo_url %></p>
+        <% end %>
+      </div>
+    <% end %>
 
   <% unless @pin.comments.blank?%>
   <div id="comments-container">
