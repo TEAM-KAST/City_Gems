@@ -6,11 +6,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
-  process :store_dimensions
+  # process :store_dimensions
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -25,6 +25,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
+  def default_url
+  ActionController::Base.helpers.asset_path("fallback/" + [version_name, "seattle.jpg"].compact.join('_'))
+end
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
@@ -36,18 +39,18 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
 
   version :mobile do
-    process :resize_to_fit => [300, 500]
-    process :store_dimensions
+    process :resize_to_fit => [300, 300]
+    # process :store_dimensions
   end
 
   version :thumb do
     process :resize_to_fit => [75, 75]
-    process :store_dimensions
+    # process :store_dimensions
   end
 
   version :cover do
     process :resize_to_fit => [3000, 3000]
-    process :store_dimensions
+    # process :store_dimensions
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -62,12 +65,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  private
+  # private
 
-  def store_dimensions
-    if file && model
-      model.width, model.height = ::MiniMagick::Image.open(file.file)[:dimensions]
-    end
-  end
+  # def store_dimensions
+  #   if file && model
+  #     model.width, model.height = ::MiniMagick::Image.open(file.file)[:dimensions]
+  #   end
+  # end
 
 end

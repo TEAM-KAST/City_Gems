@@ -1,14 +1,11 @@
+<p id="notice"><%= notice %></p>
+
 
 <div id="gem-show-page">
+  <% if @pin.image %>
     <style>
       .cover-photo {
-        <% if @pin.image %>
         background-image: url("<%= @pin.image %>");
-        <% elsif @pin.photo_url %>
-        background-image: url("<%= @pin.photo_url %>");
-        <% else %>
-        background-image: image-url('seattle.jpg');
-        <% end %>
         background-height: 100%;
         background-position: center top;
       }
@@ -20,6 +17,10 @@
         <h2 id='cover-sub'><%= @pin.appeal %></h2>
       </div>
     </div>
+  <% else %>
+    <p class="in-cover">Name: <%= @pin.name %></p>
+    <p class="in-cover">What's to love about it: <%= @pin.appeal %></p>
+  <% end %>
 
   <% unless current_user == !@pin.user %>
     <%= link_to 'Edit Gem Profile & Upload/Change Photo', edit_pin_path(@pin), class: 'edit-link' %>
@@ -29,9 +30,8 @@
     <p>Added by: <%= "#{@pin.user.first_name} #{@pin.user.last_name}" %></p>
     <% unless @pin.website.blank? %>
       <p>Website:
-        <a id="gem-website" href="<%= @pin.website %>"><%= @pin.website %></a>
+        <a href="<%= @pin.website %>"><%= @pin.website %></a>
       </p>
-
     <% end %>
 
     <% if @pin.comments %>
@@ -43,19 +43,12 @@
       <% end %>
     </div>
 
-    <% unless !@pin.image || !@pin.photo_url %>
-      <div id='image-container'>
-        <% if !@pin.image.blank? %>
-          <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
-        <% elsif !@pin.photo_url.blank? %>
-          <%= image_tag(@pin.photo_url, width: '100%', id: 'gem-image' )%>
-          <p id="photo-attribution">Source: <%= @pin.photo_url %></p>
-        <% end %>
-      </div>
-    <% end %>
+    <div id='image-container'>
+      <%= image_tag(@pin.image, width: '100%', id: 'gem-image' )%>
+    </div>
 
-    <div id="comments-container">
   <% unless @pin.comments.blank?%>
+  <div id="comments-container">
     <p>Comments:</p>
       <% @pin.comments.reverse_each do |comment| %>
       <div id="comment-start">
@@ -82,9 +75,9 @@
   <% end %>
 
     <div class="model-link-container" id="gem-show-link-container">
-      <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> <br/>
+      <%= link_to 'Add a Comment', new_pin_comment_path(@pin), remote: true, id: "new-comment-link" %> |
       <% unless current_user != @pin.user %>
-        <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE", id: "delete-gem-link" %>
+        <%= link_to 'Delete Gem', pin_path(@pin), method: "DELETE" %>
       <% end %>
     </div>
     </div>
