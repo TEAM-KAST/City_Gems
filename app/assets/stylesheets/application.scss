@@ -127,9 +127,7 @@ input.photo-submit {
 // refactor to add all popups together
 
 .cover-image {
-  position: fixed;
-   z-index: 0;
-   top: 0; right: 0; bottom: 0; left: 0;
+  
 }
 
 .popup-new-pin-form {
@@ -323,7 +321,9 @@ select {
 
 .cover-photo {
    min-height: 100px;
+   background-display: fixed;
    background-attachment: fixed;
+   background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
    max-height: 500px;
