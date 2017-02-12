@@ -5,13 +5,13 @@
   <% if @pin.image %>
     <style>
       .cover-photo {
-        background-image: url("<%= @pin.image %>");
-        background-height: 100%;
+        background-position: fixed;
+        background-height: 1000px;
         background-position: center top;
       }
     </style>
 
-    <div class='cover-photo'>
+    <div class='cover-photo' style="background-image:url(<%= @pin.image %>)">
       <div class="in-cover">
         <h1 id='cover-title'><%= @pin.name %></h1>
         <h2 id='cover-sub'><%= @pin.appeal %></h2>
