@@ -1,5 +1,6 @@
 # City Gems
 This app allows users to share and explore the "hidden gems" of a city.
+See the app deployed in Heroku [here](http://city-gems.herokuapp.com/).
 
 ## Contributors
 * [Tim Deel](https://github.com/HiDefStatic)
